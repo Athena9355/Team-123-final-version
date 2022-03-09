@@ -1,0 +1,15 @@
+<!-- Extending the predefined project layout -->
+{% extends "layouts/base.html" %} #means that we are getting everything from this base file
+
+<!- This variable sets name of browser tab  -->
+{% set project = "Stubby" %}
+
+<!- This is a replacement block for Body in base.html -->
+{% block body %} #we will be putting code in between body (HW), the gray area is the body
+    <!- Try building a new body here ->
+    <p>Hi hi</p>
+{% endblock %}
+
+<!- This is turning off birds background from base.html -->
+{% block background %}
+{% endblock %}
