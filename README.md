@@ -28,17 +28,18 @@ Project Plans: The goal of our website is to assist people in reading and enjoyi
 ### Time Box
 | Week  | Goal |
 | ------------- | ------------- |
-| 0  | Content Cell  |
-| 1  | Content Cell  |
-| 2  | Content Cell  |
-| 3  | Content Cell  |
-| 4  | Content Cell  |
-| 5  | Content Cell  |
-| 6  | Content Cell  |
-| 7  | Content Cell  |
-| 8  | Content Cell  |
+| 0  | Plan PBL. Create a wire frame and brainstorm technicals to include in the project.  |
+| 1  | Create layout and template for the project. Create navbar and common theme on the website. Create issues on each of the ideas brain stormed and assign them to each member. Start working on the issues assigned. Be ready to deploy at the end of the week.  |
+| 2  | Continue and finish working on the issues assigned in week 1. Start brainstorming new technicals to be included and assigned next week. Deploy at the end of the week. |
+| 3  |  Assign new technicals to be completed this week and next week. |
+| 4  | Complete all the technicals assigned so far.  |
+| Spring Break  | None. Catch up if behind.  |
+| 5  | Catch up on the work not yet done from week 1 through 4. Make sure that all the issues before are completed and working. Members will test out each function and make sure that there are no bugs etc. Start brainstorming new technicals to include. Be prepared for AP exam. |
+| 6  | Prepare for AP exam. Work on individual create task. Work with team to solve problems encountered. If time permits, work on the issues listed in week 5.  |
+| 7  | Prepare for AP exam. Work on individual create task. Work with team to solve problems encountered. If time permits, work on the issues listed in week 5.  |
+| 8  | Prepare for AP exam. Work on individual create task. Work with team to solve problems encountered. If time permits, work on the issues listed in week 5.  |
 | 9  | Content Cell  |
-| 10  | Content Cell  |
+| 10  | Meetings and make final changes to the website (customize website functions, improve layout of the page, etc.)  |
 | 11  | Final PBL due. Final test on technicals and make sure that they work as intended.  |
 
 ### Team Roles
