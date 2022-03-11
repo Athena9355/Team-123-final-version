@@ -22,3 +22,12 @@ Project Plans: The goal of our website is to assist people in reading and enjoyi
 <br><br>
 [Project Wires](https://docs.google.com/presentation/d/1GZvePaaDDwvUT6jKTT0dNR55OgiK0O5AjFP3gcOOXT8/edit?usp=sharing)
 
+
+
+### Team Roles
+
+Hassan - Deployment <br><br>
+Sonakshi - Github Admin <br><br>
+Athena - Scrum Master <br><br>
+Kamya - Technical Officer <br><br>
+Natalie - Design <br><br>
