@@ -20,6 +20,7 @@ Project Plans: The goal of our website is to assist people in reading and enjoyi
 3. music suggestion: we will suggest songs that go with the book if the user enters information on the book (i.e. title, genre, author etc.)
 4. games: we will include a few simple games to allow the user to take a break from reading and relax
 5. calendar system: the calendar system will help the user create a reading plan. The user can enter the date by which they would like to finish a book, the system will create a calendar that displays the chapters that the user need to finish in order to meet the goal.
+6. Create personality test --> give book suggestions based on the result of the test.
 
 <br><br>
 [Project Wires](https://docs.google.com/presentation/d/1GZvePaaDDwvUT6jKTT0dNR55OgiK0O5AjFP3gcOOXT8/edit?usp=sharing)
