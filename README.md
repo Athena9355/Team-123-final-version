@@ -26,6 +26,11 @@ Project Plans: The goal of our website is to assist people in reading and enjoyi
 
 
 ### Time Box
+<style>
+.tablelines table, .tablelines td, .tablelines th {
+        border: 1px solid black;
+        }
+</style>
 | Week  | Goal |
 | ------------- | ------------- |
 | 0  | Plan PBL. Create a wire frame and brainstorm technicals to include in the project.  |
