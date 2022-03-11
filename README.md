@@ -1,4 +1,4 @@
-Week 0
+<h2>Week 0</h2>
 
 ### Brainstorm
 1. dessert
@@ -49,10 +49,10 @@ Project Plans: The goal of our website is to assist people in reading and enjoyi
 
 ### Team Roles
 
-Hassan - Deployment <br><br>
-Sonakshi - Github Admin <br><br>
-Athena - Scrum Master <br><br>
-Kamya - Technical Officer <br><br>
-Natalie - Design <br><br>
+Hassan - Deployment: Will be responsible of deploying the website when new features are added to the website. <br><br>
+Sonakshi - Github Admin: Make sure that the GitHub pages are organized. Make updates to issues and organize scrum board and wiki pages. <br><br>
+Athena - Scrum Master: Responsible for making sure that everyone plays their role. Create review tickets every week with check boxes / tasks for members to keep track of their work. Make tangibles on review ticket. Organize Scrum Board and move past issues and cards to their appropriate column. <br><br>
+Kamya - Technical Officer: Be responsible of technical development. Assist members who are struggling with technicals and coding. <br><br>
+Natalie - Design: Create templates and navbar (and update navbar as needed) for the project. Design logo, background for website, etc. for the PBL project. <br><br>
 
 
