@@ -1,3 +1,5 @@
+Week 0
+
 ### Brainstorm
 1. dessert
 2. game
