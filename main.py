@@ -25,6 +25,14 @@ def walruses():#these are the different route
 def hawkers():
     return render_template("hawkers.html")
 
+@app.route('/natalie_abt/')
+def natalie_abt():
+    return render_template("natalie_abt.html")
+
+@app.route('/to_do/')
+def to_do():
+    return render_template("to_do.html")
+
 
 @app.route('/stub/')
 def stub():
