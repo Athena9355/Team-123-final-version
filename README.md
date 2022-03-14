@@ -1,5 +1,6 @@
 <h2>Week 0</h2>
 
+[link to review ticket](https://github.com/Athena9355/Team-123-final-version/issues/1)
 ### Brainstorm
 1. dessert
 2. game
