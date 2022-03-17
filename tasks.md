@@ -15,6 +15,8 @@ Tasks
 > Deployment: Will be responsible of deploying the website when new features are added to the website.
 Tasks:
 - [ ]  Deploy Website every week
+- [ ]  Rating system -- allows student to rate their favorite books so that the teacher can use it for future reference.
+- [ ]  create a teacher survey. lists the responses anonymously.
 <br>
 
 **Natalie Beckwith**
