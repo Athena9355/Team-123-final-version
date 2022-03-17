@@ -3,6 +3,7 @@
 **Kamya Mahendru**
 
 > Technical Officer: Be responsible of technical development. Assist members who are struggling with technicals and coding. 
+
 Tasks
 - Find New Books Page
 - Add search function to search through the books 
@@ -13,6 +14,7 @@ Tasks
 **Hassan Allam**
 
 > Deployment: Will be responsible of deploying the website when new features are added to the website.
+
 Tasks:
 - Deploy Website every week
 - Rating system -- allows student to rate their favorite books so that the teacher can use it for future reference.
@@ -22,6 +24,7 @@ Tasks:
 **Natalie Beckwith**
 
 > Design: Create templates and navbar (and update navbar as needed) for the project. Design logo, background for website, etc. for the PBL project.
+
 Tasks:
 - Make a theme for the website
 - Make the theme based on the sponsor's request
