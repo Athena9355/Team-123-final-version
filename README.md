@@ -27,6 +27,11 @@ Project Plans: The goal of our website is to assist people in reading and enjoyi
 <br><br>
 [Project Wires](https://docs.google.com/presentation/d/1GZvePaaDDwvUT6jKTT0dNR55OgiK0O5AjFP3gcOOXT8/edit?usp=sharing)
 
+notes/feedback from crossover team:
+from our discussion, the cross over team suggested that we can have a code for specific classes
+discussion board: give sub divisions. have subdivisions for each separate questions. have ways to organize 
+pop quizzes: crowd sourcing for that. engage students to have them come up with questions for each chapter. have the students turn in their questions to mr west
+maybe allow the music to play it on the website (can embed spotify on the website)
 
 ### Time Box
 <style>
