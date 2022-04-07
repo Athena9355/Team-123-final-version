@@ -4,37 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43ff41c4-f193-4285-b1e4-bdd174a2c051" name="Changes" comment="crud database set up">
-      <change afterPath="$PROJECT_DIR$/CNAME" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TT4.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/about.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/info_hub.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nighthawk-csp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crud/templates/app_crud.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crud/templates/crud/crud.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crud/templates/crud/search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crud/templates/model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/three.r119.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/vanta.birds.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/vanta.halo.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/vanta.net.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/vanta.rings.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/hawkers.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/kangaroos.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layouts/base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layouts/navbar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layouts/project.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/natalie_abt.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/stub.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/to_do.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/walruses.html" beforeDir="false" />
+    <list default="true" id="43ff41c4-f193-4285-b1e4-bdd174a2c051" name="Changes" comment="set up">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +92,7 @@
       <workItem from="1648149184526" duration="649000" />
       <workItem from="1649359132247" duration="147000" />
       <workItem from="1649359340903" duration="492000" />
-      <workItem from="1649359909009" duration="716000" />
+      <workItem from="1649359909009" duration="1290000" />
     </task>
     <task id="LOCAL-00001" summary="crud database set up">
       <created>1649359630224</created>
@@ -130,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649359630224</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="set up">
+      <created>1649360750961</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1649360750961</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,7 +128,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="crud database set up" />
-    <option name="LAST_COMMIT_MESSAGE" value="crud database set up" />
+    <MESSAGE value="set up" />
+    <option name="LAST_COMMIT_MESSAGE" value="set up" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
