@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 
-<!-- EXTEND (navbar2.html), this is a template for all rendered pages in the project -->
-{% set page_title = "CRUD Page" %}
-{% set page_description = "CRUD Database!" %}
-{% set img = "https://media.timeout.com/images/105787696/630/472/image.jpg" %}
-
-
+<!-- EXTEND (layout.html), this is a template for all rendered pages in the project -->
+{% extends "layout.html" %}
 
 <!-- CONTENT (in <head>), content for this page -->
-<title>CRUD page</title>
-
-
+{% block meta %}
+    <title>CRUD page</title>
+    <script src={{  url_for("crud.static", filename="javascript/validation.js", version='101') }}></script>
+    <script src={{  url_for("crud.static", filename="javascript/reload_page.js", version='101') }}></script>
+{% endblock %}
 
 <!-- CONTENT (in <body>), content for this page -->
-
 {% block content %}
-    <div class="container py-4 text-light bg-success">
-        <header class="pb-3 mb-4 border-bottom">
-            <div class="d-flex align-items-center text-light text-decoration-none">
-                <span class="fs-4">SQL CRUD Admin Page</span>
-            </div>
+    <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom border-primary text-dark">
+            <span class="fs-4">SQL CRUD Admin Page</span>
         </header>
+    </div>
+    <div class="container py-4 text-light bg-success">
 
-        <div class="container py-4">
+        <div class="container bg-secondary py-4">
             <div class="p-5 mb-4 bg-light text-dark rounded-3">
                 <h2>Table Viewer</h2>
                 <div class="row align-items-md-stretch">
@@ -44,9 +41,9 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
-                                <th>Favorite Restaurant</th>
-                                <th>Favorite Type of Food</th>
-
+                                <th>Email</th>
+                                <th>Password</th>
+                                <th>Phone</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -61,11 +58,9 @@
                                 <tr>
                                     <td>{{ row['userID'] }}</td>
                                     <td>{{ row['name'] }}</td>
-                                    <td>{{ row['fav_res'] }}</td>
-                                    <td>{{ row['fav_food'] }}</td>
-
-
-
+                                    <td>{{ row['email'] }}</td>
+                                    <td>{{ row['password'] }}</td>
+                                    <td>{{ pnf }}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>
@@ -77,27 +72,25 @@
         </div>
 
 
-        <div class="container py-4">
-            <div class="p-5 mb-4 bg-light text-dark">
+        <div class="container bg-secondary py-4">
+            <div class="p-5 mb-4 bg-light text-dark rounded-3">
                 <h2>Create a new record</h2>
                 <form method="POST" ID="create" action={{url_for('crud.create')}} >
                     <table class="table">
                         <thead>
                         <tr>
                             <th><label for="name">Name</label></th>
-                            <th><label for="fav_res">Favorite Restaurant</label></th>
-
-                            <th><label for="fav_food">Favorite Type of Food</label></th>
-
+                            <th><label for="email">Email</label></th>
+                            <th><label for="password">Password</label></th>
+                            <th><label for="phone">Phone</label></th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
                             <td><input type="text" name="name" id="name" required></td>
-                            <td><input type="text" name="fav_res" id="fav_res" required></td>
-                            <td><input type="text" name="fav_food" id="fav_food" required></td>
-
-
+                            <td><input type="email" name="email" id="email" placeholder="abc@xyz.org" required></td>
+                            <td><input type="password" name="password" id="password" required></td>
+                            <td><input type="tel" name="phone" id="phone" pattern="[0-9]{10}" placeholder="1234567890" required></td>
                             <td><input type="submit" value="Create"></td>
                         </tr>
                         </tbody>
@@ -108,7 +101,7 @@
 
         </div>
 
-        <div class="container py-4">
+        <div class="container bg-secondary py-4">
 
             <div class="row mb-4 bg-light text-dark rounded-3">
 
@@ -165,7 +158,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <div>
+                    <div class="p-5 mb-4 bg-light text-dark rounded-3">
                         <h2>Delete</h2>
                         <form method="POST" ID="read" action={{url_for('crud.delete')}} >
                             <table id="read_table">
@@ -193,6 +186,22 @@
 
     </div>
 
+    <!-- Back end SQL data definition code (SQLalchemy) -->
+    <div class="container py-4">
+        <h1 id="BE-MODEL">Back End Definition Code (Model) </h1>
+        <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Fcrud%2Fmodel.py&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+    </div>
 
+    <!-- Front End HTML, shows this file -->
+    <div class="container py-4">
+        <h1 id="FE-VIEW">Front End HTML Code (View) </h1>
+        <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Fcrud%2Ftemplates%2Fcrud%2Fcrud.html&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+    </div>
+
+    <!-- Back Route code -->
+    <div class="container py-4">
+        <h1 id="BE-CONTROL">Back End Form Request and API Code (Control)</h1>
+        <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Fcrud%2Fapp_crud.py&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+    </div>
 
 {% endblock %}

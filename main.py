@@ -1,47 +1,34 @@
-# import "packages" from flask
-from flask import Flask, render_template
+from flask import render_template
+from __init__ import app
 
-# create a Flask instance
-app = Flask(__name__)
+from starter.starter import app_starter
+from algorithm.algorithm import app_algorithm
+from api.webapi import app_api
+from crud.app_crud import app_crud
+from crud.app_crud_api import app_crud_api
+from frontend.frontend import app_frontend
+from y2022 import app_y2022
 
-# connects default URL to render index.html
-@app.route('/') #this is the first page. runs the function: "def index". have to add tab below index. defined roots, roots are connected to functions
+app.register_blueprint(app_starter)
+app.register_blueprint(app_algorithm)
+app.register_blueprint(app_api)
+app.register_blueprint(app_crud)
+app.register_blueprint(app_crud_api)
+app.register_blueprint(app_frontend)
+app.register_blueprint(app_y2022)
+
+
+@app.route('/')
 def index():
     return render_template("index.html")
 
 
-# connects /kangaroos path to render kangaroos.html
-@app.route('/kangaroos/')
-def kangaroos():
-    return render_template("kangaroos.html")
+@app.errorhandler(404)
+def page_not_found(e):
+    # note that we set the 404 status explicitly
+    return render_template('404.html'), 404
 
 
-@app.route('/walruses/')
-def walruses():#these are the different route
-    return render_template("walruses.html")
-
-
-@app.route('/hawkers/')
-def hawkers():
-    return render_template("hawkers.html")
-
-@app.route('/natalie_abt/')
-def natalie_abt():
-    return render_template("natalie_abt.html")
-
-@app.route('/to_do/')
-def to_do():
-    return render_template("to_do.html")
-
-
-@app.route('/stub/')
-def stub():
-    return render_template("stub.html") #code for the function
-
-
-
-# runs the application on the development server
 if __name__ == "__main__":
-    app.run(debug=True) #says "run this directly" app.run will run the server
-
-#index.html is standard
+    # runs the application on the repl development server
+    app.run(debug=True, port="5222")
