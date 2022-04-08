@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom border-primary text-dark">
+            <span class="fs-4">All Jokes</span>
+        </header>
+
+        <div class="row mx-3 bg-primary text-light rounded-3">
+            <div class="col-md mx-3 py-5">
+                {% for joke in jokes %}
+                    <p class="setup"><strong>{{joke.id}}. {{joke.joke}}</strong></p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>JSON Data</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{jokes}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
