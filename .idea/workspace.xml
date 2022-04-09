@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43ff41c4-f193-4285-b1e4-bdd174a2c051" name="Changes" comment="phone added... all files are up to date">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cruddy/query.py" beforeDir="false" afterPath="$PROJECT_DIR$/cruddy/query.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cruddy/templates/cruddy/crud.html" beforeDir="false" afterPath="$PROJECT_DIR$/cruddy/templates/cruddy/crud.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cruddy/templates/templates/cruddy/authorize.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cruddy/templates/templates/cruddy/crud.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cruddy/templates/templates/cruddy/crud_async.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cruddy/templates/templates/cruddy/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cruddy/templates/templates/cruddy/search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/myDB.db" beforeDir="false" afterPath="$PROJECT_DIR$/model/myDB.db" afterDir="false" />
-    </list>
+    <list default="true" id="43ff41c4-f193-4285-b1e4-bdd174a2c051" name="Changes" comment="added space + format to display loggined in user for the second part of hack 2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -263,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649530025407</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added space + format to display loggined in user for the second part of hack 2">
+      <created>1649534800169</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1649534800169</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,7 +282,8 @@
     <MESSAGE value="crud database set up" />
     <MESSAGE value="set up" />
     <MESSAGE value="phone added... all files are up to date" />
-    <option name="LAST_COMMIT_MESSAGE" value="phone added... all files are up to date" />
+    <MESSAGE value="added space + format to display loggined in user for the second part of hack 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="added space + format to display loggined in user for the second part of hack 2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
