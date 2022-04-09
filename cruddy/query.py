@@ -152,3 +152,6 @@ if __name__ == "__main__":
     # Clean up data from run, so it can run over and over the same
     user_record = user_by_email(email1)
     user_record.delete()
+
+def logout():
+    logout_user()
