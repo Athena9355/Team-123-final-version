@@ -153,5 +153,3 @@ if __name__ == "__main__":
     user_record = user_by_email(email1)
     user_record.delete()
 
-def logout():
-    logout_user()

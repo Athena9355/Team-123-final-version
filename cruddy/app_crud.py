@@ -3,6 +3,8 @@ from flask import Blueprint, render_template, request, url_for, redirect, jsonif
 from flask_login import login_required
 
 from cruddy.query import *
+import os
+
 
 # blueprint defaults https://flask.palletsprojects.com/en/2.0.x/api/#blueprint-objects
 app_crud = Blueprint('crud', __name__,
@@ -40,7 +42,7 @@ def crud_login():
     if request.form:
         email = request.form.get("email")
         password = request.form.get("password")
-        if login(email, password):       # zero index [0] used as email is a tuple
+        if login(email, password):  # zero index [0] used as email is a tuple
             return redirect(url_for('crud.crud'))
 
     # if not logged in, show the login page
@@ -55,9 +57,9 @@ def crud_authorize():
         user_name = request.form.get("user_name")
         email = request.form.get("email")
         password1 = request.form.get("password1")
-        password2 = request.form.get("password1")           # password should be verified
+        password2 = request.form.get("password1")  # password should be verified
         phone = request.form.get("phone")
-        if authorize(user_name, email, password1, phone):    # zero index [0] used as user_name and email are type tuple
+        if authorize(user_name, email, password1, phone):  # zero index [0] used as user_name and email are type tuple
             return redirect(url_for('crud.crud_login'))
     # show the auth user page if the above fails for some reason
     return render_template("authorize.html")
@@ -131,3 +133,11 @@ def search_term():
     term = req['term']
     response = make_response(jsonify(users_ilike(term)), 200)
     return response
+
+
+# logout
+@app_crud.route('/logout/')
+def logout():
+    user_name = request.form.get("name")
+    a = user_name
+    del a
