@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43ff41c4-f193-4285-b1e4-bdd174a2c051" name="Changes" comment="displays logged in user">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cruddy/app_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/cruddy/app_crud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cruddy/query.py" beforeDir="false" afterPath="$PROJECT_DIR$/cruddy/query.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cruddy/templates/cruddy/crud.html" beforeDir="false" afterPath="$PROJECT_DIR$/cruddy/templates/cruddy/crud.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cruddy/templates/cruddy/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/cruddy/templates/cruddy/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/myDB.db" beforeDir="false" afterPath="$PROJECT_DIR$/model/myDB.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +47,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
@@ -159,7 +154,10 @@
       <workItem from="1649450024894" duration="21000" />
       <workItem from="1649546482801" duration="8000" />
       <workItem from="1649546501833" duration="585000" />
-      <workItem from="1649547374832" duration="63000" />
+      <workItem from="1649547374832" duration="124000" />
+      <workItem from="1649872960526" duration="277000" />
+      <workItem from="1650071944788" duration="10000" />
+      <workItem from="1650072029077" duration="404000" />
     </task>
     <task id="LOCAL-00001" summary="crud database set up">
       <created>1649359630224</created>
@@ -217,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649535413838</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="displays logged in user">
+      <created>1649547472391</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1649547472391</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +254,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Team_123_final_version$Team_123_final_version.coverage" NAME="Team-123-final-version Coverage Results" MODIFIED="1649449045942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Team_123_final_version1$Team_123_final_version1.coverage" NAME="Team-123-final-version1 Coverage Results" MODIFIED="1650072060080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Team_123_final_version1$Team_123_final_version.coverage" NAME="Team-123-final-version Coverage Results" MODIFIED="1649546518892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

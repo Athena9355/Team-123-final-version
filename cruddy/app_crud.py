@@ -138,6 +138,5 @@ def search_term():
 # logout
 @app_crud.route('/logout/')
 def logout():
-    user_name = request.form.get("name")
-    a = user_name
-    del a
+    logout_user()
+    return redirect(url_for('crud.crud_login'))
