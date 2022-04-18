@@ -49,6 +49,19 @@ def crud_login():
     return render_template("login.html")
 
 
+@app_crud.route('/loginfib/', methods=["GET", "POST"])
+def crud_login_fib():
+    # obtains form inputs and fulfills login requirements
+    if request.form:
+        email = request.form.get("email")
+        password = request.form.get("password")
+        if login(email, password):  # zero index [0] used as email is a tuple
+            return redirect(url_for('algorithm.fibonacci'))
+
+    # if not logged in, show the login page
+    return render_template("login.html")
+
+
 @app_crud.route('/authorize/', methods=["GET", "POST"])
 def crud_authorize():
     # check form inputs and creates user

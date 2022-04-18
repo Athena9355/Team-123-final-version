@@ -12,6 +12,7 @@
             <header class="pb-3 mb-4 border-bottom border-primary text-dark">
                 <span class="fs-4"> Fib Login Page</span>
                 <sup>logged in user: {{current_user.name}}</sup></span>
+                <sup><td><a href={{url_for('crud.logout')}}>Log Out</a></td></sup>
             </header>
         </div>
 
@@ -19,7 +20,7 @@
 
             <div class="container bg-secondary py-4">
                 <div class="p-5 mb-4 bg-light text-dark rounded-3">
-                    <form method="POST" ID="login" action={{url_for('crud.crud_login')}}>
+                    <form method="POST" ID="loginfib" action={{url_for('crud.crud_login_fib')}}>
                         <table>
                             <tr><th><label for="email">Email</label></th></tr>
                             <tr><td><input type="email" id='email' name="email" size="20" required></td></tr>
