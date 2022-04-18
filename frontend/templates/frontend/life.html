@@ -21,6 +21,10 @@
             <span class="fs-4">JavaScript - Remix of Game of Life</span>
         </header>
 
+        <form method="POST" ID="logout" action={{url_for('crud.crud_logout')}} >
+            <input type="submit" value="Logout">
+        </form>
+
         <!-- Buttons that link to functions in javascript -->
         <button onclick="start()" id="start-btn">start</button>
         <button onclick="step()">step</button>
