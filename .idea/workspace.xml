@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43ff41c4-f193-4285-b1e4-bdd174a2c051" name="Changes" comment="login set up on fib">
+    <list default="true" id="43ff41c4-f193-4285-b1e4-bdd174a2c051" name="Changes" comment="log in set up on fib. fib now has the ability to log in to fib page. information on original fib isn't blocked out before log in">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algorithm/templates/algorithm/fibonacci.html" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/templates/algorithm/fibonacci.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cruddy/app_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/cruddy/app_crud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/templates/algorithm/palindrome.html" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/templates/algorithm/palindrome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/fragments/navbar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +44,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/cruddy/templates/cruddy" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/algorithm/templates/algorithm" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -55,11 +56,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/algorithm/templates/algorithm" />
       <recent name="$PROJECT_DIR$/cruddy/templates/cruddy" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/cruddy/templates" />
       <recent name="$PROJECT_DIR$/cruddy/static" />
-      <recent name="$PROJECT_DIR$/cruddy" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/algorithm/templates/algorithm" />
@@ -162,7 +163,7 @@
       <workItem from="1649872960526" duration="277000" />
       <workItem from="1650071944788" duration="10000" />
       <workItem from="1650072029077" duration="3628000" />
-      <workItem from="1650226407644" duration="3605000" />
+      <workItem from="1650226407644" duration="4225000" />
     </task>
     <task id="LOCAL-00001" summary="crud database set up">
       <created>1649359630224</created>
@@ -248,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650252353370</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="log in set up on fib. fib now has the ability to log in to fib page. information on original fib isn't blocked out before log in">
+      <created>1650253455271</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1650253455271</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,7 +283,8 @@
     <MESSAGE value="hack 1 and hack 2 done" />
     <MESSAGE value="hack 3 attempt" />
     <MESSAGE value="login set up on fib" />
-    <option name="LAST_COMMIT_MESSAGE" value="login set up on fib" />
+    <MESSAGE value="log in set up on fib. fib now has the ability to log in to fib page. information on original fib isn't blocked out before log in" />
+    <option name="LAST_COMMIT_MESSAGE" value="log in set up on fib. fib now has the ability to log in to fib page. information on original fib isn't blocked out before log in" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

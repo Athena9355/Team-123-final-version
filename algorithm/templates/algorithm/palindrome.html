@@ -2,54 +2,32 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <div class="container py-4">
-        <header class="pb-3 mb-4 border-bottom border-primary text-dark">
-            <img src="{{ url_for('algorithm.static', filename='palindrome.jpeg') }}" height="60px" class="d-inline-block align-center" alt="">
-            <span class="fs-4">Palindrome Algorithms</span>
-        </header>
-        <div class="row mx-3 mb-4 bg-primary rounded-3 align-items-md-stretch">
-            <h3>Enter a string:</h3>
-            <form id="paliForm" action="{{ url_for('algorithm.palindrome') }}" method="POST" >
-                <label for="candidate"></label>
-                <input name="candidate" id="candidate" type="text" placeholder="{{palindrome.candidate}}">
-                <button>Test!</button>
+<div class="container py-4">
+    <header class="pb-3 mb-4 border-bottom border-primary text-dark">
+        <span class="fs-4"> Fib Login Page</span>
+        <sup>logged in user: {{current_user.name}}</sup></span>
+        <sup><td><a href={{url_for('crud.logout')}}>Log Out</a></td></sup>
+    </header>
+</div>
+
+<div class="container py-4 text-light bg-success">
+
+    <div class="container bg-secondary py-4">
+        <div class="p-5 mb-4 bg-light text-dark rounded-3">
+            <form method="POST" ID="loginfib" action={{url_for('crud.crud_login_fib')}}>
+                <table>
+                    <tr><th><label for="email">Email</label></th></tr>
+                    <tr><td><input type="email" id='email' name="email" size="20" required></td></tr>
+                    <tr><th><label for="password">Password</label></th></tr>
+                    <tr><td><input type="password" id="password" name="password" size="20" required></td></tr>
+                    <form method="POST" action={{url_for('algorithm.fibonacci')}}>
+                        <tr><th><input type="submit" value="Submit"></th></tr>
+                    </form>
+                    <tr><td><a href={{url_for('crud.crud_authorize')}}>Sign Up</a></td></tr>
+                </table>
             </form>
-
-            <h3></h3>
-            <!-- Number, List table -->
-            <table class="table mx-3">
-                <thead>
-                <tr>
-                    <th scope="col">Tests</th>
-                    <th scope="col">Result</th>
-                </tr>
-                </thead>
-                <tbody class="text-light">
-                <tr>
-                    <td>{{palindrome.tests}}</td>
-                    <td>{{palindrome.isPalindrome}}</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="row mx-3 mb-4 bg-primary rounded-3 align-items-md-stretch">
-            <!-- Series -->
-            <table class="table mx-3">
-                <thead>
-                <tr>
-                    <th scope="col">The Palindrome testing series for: "{{palindrome.candidate}}".</th>
-                </tr>
-                </thead>
-                <tbody class="text-light">
-                {% for test in palindrome.analysis %}
-                    <tr>
-                        <td>{Test#={{test.test}} Front={{test.front}} Back={{test.back}} Result={{test.result}}</td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-
         </div>
     </div>
+
+</div>
 {% endblock %}
