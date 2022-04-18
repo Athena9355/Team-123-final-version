@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43ff41c4-f193-4285-b1e4-bdd174a2c051" name="Changes" comment="hack 1 and hack 2 done">
-      <change afterPath="$PROJECT_DIR$/algorithm/templates/algorithm/loginfib.html" afterDir="false" />
+    <list default="true" id="43ff41c4-f193-4285-b1e4-bdd174a2c051" name="Changes" comment="hack 3 attempt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/templates/algorithm/fibonacci.html" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/templates/algorithm/fibonacci.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/templates/algorithm/palindrome.html" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/templates/algorithm/palindrome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/myDB.db" beforeDir="false" afterPath="$PROJECT_DIR$/model/myDB.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/fragments/navbar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +160,7 @@
       <workItem from="1649872960526" duration="277000" />
       <workItem from="1650071944788" duration="10000" />
       <workItem from="1650072029077" duration="3628000" />
-      <workItem from="1650226407644" duration="1370000" />
+      <workItem from="1650226407644" duration="2896000" />
     </task>
     <task id="LOCAL-00001" summary="crud database set up">
       <created>1649359630224</created>
@@ -237,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650073404092</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="hack 3 attempt">
+      <created>1650248543427</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1650248543427</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,7 +264,8 @@
     <MESSAGE value="added space + format to display loggined in user for the second part of hack 2" />
     <MESSAGE value="displays logged in user" />
     <MESSAGE value="hack 1 and hack 2 done" />
-    <option name="LAST_COMMIT_MESSAGE" value="hack 1 and hack 2 done" />
+    <MESSAGE value="hack 3 attempt" />
+    <option name="LAST_COMMIT_MESSAGE" value="hack 3 attempt" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
