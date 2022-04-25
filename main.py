@@ -33,6 +33,10 @@ def natalie_abt():
 def to_do():
     return render_template("to_do.html")
 
+@app.route('/faqs/')
+def faqs():
+    return render_template("faqs.html")
+
 
 @app.route('/stub/')
 def stub():
@@ -42,6 +46,6 @@ def stub():
 
 # runs the application on the development server
 if __name__ == "__main__":
-    app.run(debug=True) #says "run this directly" app.run will run the server
+    app.run(debug=True,port=8080) #says "run this directly" app.run will run the server
 
 #index.html is standard

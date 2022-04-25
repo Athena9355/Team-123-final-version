@@ -1,0 +1,179 @@
+{% extends "layouts/base.html" %}
+{% block body %}
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .faq {
+        padding: 20px;
+        width: 60%;
+        min-width:450px;
+        margin: auto;
+        position: relative;
+        height: auto;
+    }
+
+    .faq-container {
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .faq-label {
+        cursor: pointer;
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: cadetblue;
+        border-radius: 5px;
+
+    }
+
+    .faq-label-text {
+        color: white;
+
+    }
+
+    .faq-label-icon {
+        padding: 2px 3px;
+        background: #D9C9E4;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .material-icons {
+        color: white;
+        transition: 0.3s ease;
+    }
+
+    .faq-answer {
+        transition: 0.3s ease;
+        margin-top: 15px;
+        height: 0;
+        border-radius: 6px;
+        color: white;
+        overflow: hidden;
+
+    }
+
+    .faq-answer-content {
+        padding: 10px 0 10px 15px;
+
+
+    }
+
+    .active {
+
+        background: cadetblue;
+        border: 1px solid #C7C4C4;
+
+        height: auto;
+        margin-bottom: 25px;
+
+    }
+    .rotate{
+        transform: rotate(180deg)
+    }
+    .global-label{
+        width:100%;
+        height:35px;
+        border-bottom: solid 2px #C4C1C1;
+        margin-bottom: 35px;
+    }
+    .global-label-text{
+        font-size:18px;
+        color: whitesmoke;
+    }
+</style>
+
+<div class='faq'>
+    <div class="global-label">
+        <div class="global-label-text">
+            Frequently asked questions
+        </div>
+
+    </div>
+    <!--1 question-->
+    <div class="faq-container">
+        <div class="faq-label">
+            <div class="faq-label-text">
+                How do I contact Mr.West?
+            </div>
+            <div class="faq-label-icon">
+        <span class="material-icons">
+          expand_more
+        </span>
+            </div>
+
+        </div>
+        <div class="faq-answer ">
+            <div class="faq-answer-content">
+               twest@powayusd.com
+            </div>
+
+        </div>
+    </div>
+    <!--2 question-->
+    <div class="faq-container">
+        <div class="faq-label">
+            <div class="faq-label-text">
+                How can I make book reccomendations
+            </div>
+            <div class="faq-label-icon">
+        <span class="material-icons">
+          expand_more
+        </span>
+            </div>
+
+        </div>
+        <div class="faq-answer ">
+            <div class="faq-answer-content">
+               you can use the suggest a book feature on the pbl drop down
+            </div>
+
+        </div>
+    </div>
+    <!-- 3 question -->
+    <div class="faq-container">
+        <div class="faq-label">
+            <div class="faq-label-text">
+                Had some trouble navigating the site, or the site is broken?
+            </div>
+            <div class="faq-label-icon">
+        <span class="material-icons">
+          expand_more
+        </span>
+            </div>
+
+        </div>
+        <div class="faq-answer ">
+            <div class="faq-answer-content">
+                You can email us or contact us through our about pages we might have some form of contact listed there!
+            </div>
+
+        </div>
+    </div>
+    <script>
+        let faqLabel=document.querySelectorAll(".faq-label");
+
+        faqLabel.forEach(item=>item.onclick=()=>{
+
+            item.nextElementSibling.classList.toggle('active');
+
+
+            let labelIcon=item.lastElementChild;
+            let icons=labelIcon.lastElementChild;
+            icons.classList.toggle('rotate');
+
+
+        })
+    </script>
+    {% endblock %}
