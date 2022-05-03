@@ -37,6 +37,10 @@ def to_do():
 def faqs():
     return render_template("faqs.html")
 
+@app.route('/discussion/')
+def discussion():
+    return render_template("discussion.html")
+
 
 @app.route('/stub/')
 def stub():

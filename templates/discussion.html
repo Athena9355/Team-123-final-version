@@ -1,50 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-  <div class="search-box">
-  <div>
-    <select name="" id="">
-      <option value="Everything">Everything</option>
-      <option value="Titles">Titles</option>
-      <option value="Descriptions">Descriptions</option>
-    </select>
-    <input type="text" name="q" placeholder="search ...">
-    <button><i class="fa fa-search"></i></button>
-  </div>
+{% extends "layouts/base.html" %}
+{% block body %}
 
-  </div>
-  </header>
-<div class="container">
-  <div class="subforum">
-    <div class="subforum-title">
-      <h1>General Information</h1>
-    </div>
-    <div class="subforum-row">
-      <div class="subforum-icon subforum-column center">
-        <i class="fa fa-car center"></i>
-      </div>
-      <div class="subforum-description subforum-column">
-        <h4><a href="#">Description Title</a></h4>
-        <p>Description Content: let's try to be cool, otherwise,w at 'sthe point in libing together with people youdont' live.</p>
-      </div>
-      <div class="subforum-stats subforum-column center">
-        <span>24 Posts | 12 Topics</span>
-      </div>
-      <div class="subforum-info subforum-column">
-        <b><a href="">Last post</a></b> by <a href="">JustAUser</a>
-        <br>on <small>12 Dec 2020</small>
-      </div>
-    </div>
-  </div>
-  <script>
-    function showComment(){
-      var commentArea = document.getElementById("comment-area");
-      commentArea.classList.remove("hide");
-    }
 
-    //Reply
-    function showReply(){
-      var replyArea = document.getElementById("reply-area");
-      replyArea.classList.remove("hide");}
-  </script>
-</div>
-</html>
+  {% endblock %}
