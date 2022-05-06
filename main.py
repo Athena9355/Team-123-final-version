@@ -41,6 +41,21 @@ def faqs():
 def discussion():
     return render_template("discussion.html")
 
+@app.route('/kamya/',methods=['GET', 'POST'])
+def kamya():
+    url = "https://random-words5.p.rapidapi.com/getMultipleRandom"
+
+    querystring = {"count":"5"}
+
+    headers = {
+        'x-rapidapi-host': "random-words5.p.rapidapi.com",
+        'x-rapidapi-key': "baf45032bdmsh1fb0709d81a2d0ep1d1bfejsnb09953cc9b71"
+    }
+    response = requests.request("GET", url, headers=headers, params=querystring)
+    return render_template("kamya.html", word=response.json())
+    print(response.text)
+
+
 
 @app.route('/stub/')
 def stub():

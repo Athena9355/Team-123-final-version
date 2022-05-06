@@ -1,0 +1,287 @@
+{% extends "layouts/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% block body %}
+<style>
+    #container {
+        height: 525px;
+        width: 360px;
+        margin: 100px auto;
+        background: #573C76;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+    }
+
+    h1 {
+        background: #1F030C;
+        color: white;
+        margin: 0;
+        padding: 10px 100px;
+        font-size: 12px;
+        font-weight: normal;
+    }
+
+    p {
+        padding-left: 20px;
+    }
+
+    form input[type="text"] {
+        width=90px;
+    }
+
+    input {
+        padding-left: 20px;
+    }
+
+    #billamt {
+        font-size: 14px;
+        /*color: #2980b9;*/
+        color: #red;
+        background-color: #f7f7f7;
+        width: 60%;
+        padding: 5px 5px 8px 8px;
+    }
+
+    #billamt:focus {
+        background: #fff;
+        border: 3px solid #2980b9;
+        outline: none;
+    }
+
+    #peopleamt {
+        width: 60%;
+        padding: 5px 5px 8px 8px;
+        margin-left: 20px;
+        color: #red;
+        background-color: #f7f7f7;
+        font-size: 14px;
+    }
+
+    .dollarSign {
+        display: inline;
+    }
+
+    #serviceQual {
+        padding: 13px 13px 20px 20px;
+        margin-left: 20px;
+        font-size: 25px;
+    }
+
+    button {
+        text-transform: uppercase;
+        font-weight: bold;
+        display: block;
+        margin: 30px auto;
+        background:#573C76;
+        border-radius: 5px;
+        width: 200px;
+        height: 50px;
+        font-size: 17px;
+        color: #573C76;
+    }
+
+    button:hover {
+        background: #573C76;
+        border-bottom-color: #111;
+    }
+
+    button:active {
+        position: relative;
+        top: 1px;
+    }
+
+    #totalTip {
+        font-size: 30px;
+        margin-top: 5px;
+        text-align: center;
+    }
+
+    #totalTip:before {
+        content: "Tip amount";
+        font-size: 20px;
+        font-weight: bold;
+        display: block;
+        text-transform: uppercase;
+    }
+
+    #totalTip sup {
+        font-size: 20px;
+        top: -18px;
+    }
+
+    #totalTip small {
+        font-size: 20px;
+        font-weight: bold;
+        display: block;
+    }
+</style>
+
+<p style="text-align: center">
+    <img src="/static/design/aboutme3.png" style="height: 500px; width: 900px" id="imgClickAndChange" onclick="changeImage()"/>
+</p>
+<div class="w3-container">
+    <p class="animated bounce infinite" style="font-size: large; text-align: center; color: white">Mask vs No mask (click me)!</p>
+</div>
+<div class="text-center" style="background-color:#573C76 ">
+    <button onClick="window.location.reload();">Start Over!</button>
+</div>
+
+
+<script>
+    function changeImage() {
+
+        if (document.getElementById("imgClickAndChange").src ="/static/design/aboutme3.png")
+        {
+            document.getElementById("imgClickAndChange").src = "/static/design/aboutme.png"
+        }
+
+    }
+</script>
+<div class="container" style="background-color:#573C76">
+    <div class="center-block" style="margin: 5% 10% 10%;">
+        <div class="col-12" style="text-align: center;">
+            <br>
+            <p style="color: white; font-size: xx-large">Random Word Generator API</p>
+            <br>
+            <a href="{{url_for('kamya')}}" class="button1">Start Over!</a>
+
+        </div>
+        <br>
+        <br>
+        <br>
+
+
+    </div>
+    <table style="margin: 2%">
+        <tr>
+            <p style="color:white ; font-size: x-large; text-align: center" id="result" onclick="lengthy()"><strong> CLICK ME!</strong></p>
+
+            <script>
+                function lengthy() {
+                    document.getElementById("result").innerHTML = "{{word}}";
+                }
+            </script>
+        </tr>
+        <tr>
+            <br>
+            <br>
+            <br>
+            <th>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <p class="text-center" style="color: whitesmoke; font-size: large;text-align: center"  id="jsondata" onclick="words()" >Show JSON</p>
+
+                <script>
+                    function words() {
+                        document.getElementById("jsondata").innerHTML = "{{word}}";
+                    }
+                </script>
+            </td>
+        </tr>
+    </table>
+</div>
+<br>
+<br>
+<div id="container">
+    <h2 style="text-align: center">Tip Calculator</h2>
+    <div id="calculator">
+
+
+        <form>
+            <p>How much was your bill?
+            <p>
+                $ <input id="billamt" type="text" placeholder="Bill Amount">
+
+            <p>How was your service?
+            <p>
+                <select id="serviceQual">
+                    <option disabled selected value="0">-- Choose an Option --</option>
+                    <option value="0.3">30&#37; &#45; Outstanding</option>
+                    <option value="0.2">20&#37; &#45; Good</option>
+                    <option value="0.15">15&#37; &#45; It was OK</option>
+                    <option value="0.1">10&#37; &#45; Bad</option>
+                    <option value="0.05">5&#37; &#45; Terrible</option>
+                </select>
+
+        </form>
+        <p>How many people are sharing the bill?</p>
+        <input id="peopleamt" type="text" placeholder="Number of People"> people
+        <button type="button" id="calculate">Calculate!</button>
+
+    </div>
+    <!--calculator end-->
+    <div id="totalTip">
+        <sup>$</sup><span id="tip">0.00</span>
+        <small id="each">each</small>
+    </div>
+    <!--totalTip end-->
+
+</div>
+<!--container end-->
+<script>
+    //Calculate Tip
+    function calculateTip() {
+        var billAmt = document.getElementById("billamt").value;
+        var serviceQual = document.getElementById("serviceQual").value;
+        var numOfPeople = document.getElementById("peopleamt").value;
+
+        //validate input
+        if (billAmt === "" || serviceQual == 0) {
+            alert("Please enter values");
+            return;
+        }
+        //Check to see if this input is empty or less than or equal to 1
+        if (numOfPeople === "" || numOfPeople <= 1) {
+            numOfPeople = 1;
+            document.getElementById("each").style.display = "none";
+        } else {
+            document.getElementById("each").style.display = "block";
+        }
+
+        //Calculates the tip
+        var total = (billAmt * serviceQual) / numOfPeople;
+        //round to two decimal places
+        total = Math.round(total * 100) / 100;
+        //next line allows us to always have two digits after decimal point
+        total = total.toFixed(2);
+        //Display the tip
+        document.getElementById("totalTip").style.display = "block";
+        document.getElementById("tip").innerHTML = total;
+
+    }
+
+    //Hide the tip amount on load
+    document.getElementById("totalTip").style.display = "none";
+    document.getElementById("each").style.display = "none";
+
+    //click to call function
+    document.getElementById("calculate").onclick = function() {
+        calculateTip();
+
+    };
+</script>
+<footer style="background-color: #573C76">
+    <br>
+    <br>
+    <p style="text-align: center">
+        <a href="https://docs.google.com/document/d/1nkm87IdZozglR8wTO8aU4xgsHIAhfzsOXf_fM8XVy_w/edit" class="button1">Personal Notes</a>
+        <a href="https://github.com/Tyler929/WalkieTalkies" class="button1">Github Repository</a>
+        <a href="https://github.com/Tyler929/WalkieTalkies/commits?author=kamyamah" class="button1">Commits</a>
+        <a href="https://github.com/Tyler929/WalkieTalkies/issues/assigned/kamyamah" class="button1">Tasks</a>
+        <a href="https://padlet.com/kamya04mahendru/u2t64vrl8q6bjdic" class="button1">Padlet</a>
+    </p>
+    <br>
+    <br>
+
+</footer>
+{% endblock %}
+</body>
+</html>
