@@ -1,8 +1,10 @@
-# import "packages" from flask
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from __init__ import app
+import requests
+from cruddy.app_crud import app_crud
+from pathlib import Path
 
-# create a Flask instance
-app = Flask(__name__)
+app.register_blueprint(app_crud)
 
 # connects default URL to render index.html
 @app.route('/') #this is the first page. runs the function: "def index". have to add tab below index. defined roots, roots are connected to functions
