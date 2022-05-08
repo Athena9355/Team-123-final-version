@@ -75,4 +75,30 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
 
         </div>
     </div>
+    <div class="custom-control custom-switch">
+        <input type="checkbox" onclick="darkFunction()" class="custom-control-input" id="darkSwitch">
+        <label class="custom-control-label" for="darkSwitch"></label>
+    </div>
+    <script>
+        function darkFunction() {
+            let element = document.body;
+            element.classList.toggle("dark-mode");
+        }
+        const darkSwitch=document.getElementById("darkSwitch");
+        if(darkSwitch) {
+            const darkSwitchSelected =
+                localStorage.getItem("darkSwitch") !== null &&
+                localStorage.getItem("darkSwitch") === "dark";
+            darkSwitch.checked=darkSwitchSelected;
+            if (darkSwitchSelected)
+                document.body.classList.toggle("dark-mode");
+        }
+        function darkFunction() {
+            // toggles between off (standard CSS) and dark-mode (.dark-mode CSS)
+            document.body.classList.toggle("dark-mode");
+            // localStorage is used to manage darkSwitch status
+            darkSwitch.checked
+                ? localStorage.setItem("darkSwitch","dark")
+                : localStorage.removeItem("darkSwitch");}
+    </script>
 </nav>
