@@ -1,5 +1,4 @@
 from flask import Flask
-from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
@@ -13,6 +12,3 @@ app.config['SECRET_KEY'] = 'SECRET_KEY'
 db = SQLAlchemy(app)
 Migrate(app, db)
 
-# Setup LoginManager object (app)
-login_manager = LoginManager()
-login_manager.init_app(app)
