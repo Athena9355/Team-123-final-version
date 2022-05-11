@@ -42,6 +42,10 @@ def to_do():
 def faqs():
     return render_template("faqs.html")
 
+@app.route('/crud1/')
+def crud1():
+    return render_template("crud1.html")
+
 @app.route('/discussion/')
 def discussion():
     return render_template("discussion.html")
@@ -68,8 +72,12 @@ def stub():
 
 
 
+
+
+
 # runs the application on the development server
 if __name__ == "__main__":
     app.run(debug=True,port=8080) #says "run this directly" app.run will run the server
 
 #index.html is standard
+
