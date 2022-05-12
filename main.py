@@ -46,6 +46,10 @@ def faqs():
 def crud1():
     return render_template("crud1.html")
 
+@app.route('/login/')
+def login():
+    return render_template("login.html")
+
 @app.route('/discussion/')
 def discussion():
     return render_template("discussion.html")
