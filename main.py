@@ -16,19 +16,6 @@ def index():
 
 
 # connects /kangaroos path to render kangaroos.html
-@app.route('/kangaroos/')
-def kangaroos():
-    return render_template("kangaroos.html")
-
-
-@app.route('/walruses/')
-def walruses():#these are the different route
-    return render_template("walruses.html")
-
-
-@app.route('/hawkers/')
-def hawkers():
-    return render_template("hawkers.html")
 
 @app.route('/natalie_abt/')
 def natalie_abt():
@@ -49,6 +36,10 @@ def crud1():
 @app.route('/login/')
 def login():
     return render_template("login.html")
+
+@app.route('/search/')
+def search():
+    return render_template("search.html")
 
 @app.route('/discussion/')
 def discussion():
