@@ -1,16 +1,18 @@
 {% extends "layouts/base.html" %}
 {% block body %}
-  <div id="tasker" class="tasker">
+<br><br><br>
+  <h1 id="tasker" class="tasker">
   <div id="error" class="error">Add Comment to Board</div>
   <div id="tasker-header" class="tasker-header">
     <input type="text" id="input-task" placeholder="Add Comment to Board">
     <button id="add-task-btn"><i class="fa fa-fw fa-plus"></i>
     </button>
   </div>
+    <br> <br>
   <div class="tasker-body">
     <ul id="tasks"></ul>
   </div>
-  </div>
+  </h1>
 <script>
   (function() {
     'use strict';
@@ -109,4 +111,39 @@
     tasker.init();
   }());
 </script>
+
+<style>
+  .tasker {
+    color: cadetblue;
+    font-size: large;
+    background-color: #ffd78f;
+    margin: 2%;
+    text-align: center;
+  }
+
+  .tasker-body {
+    background-color: #e8a1a5;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    margin: 5%;
+  }
+  
+  .fa fa-fw fa-plus {
+    background-color: darkslategray;
+    size: 10px;
+  }
+
+  .error {
+    padding-top: 10px;
+    font-family: "American Typewriter";
+    font-size: 50px;
+  }
+
+  .tasks {
+
+  }
+
+</style>
+
   {% endblock %}
