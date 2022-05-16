@@ -74,7 +74,9 @@ def kamya():
 def stub():
     return render_template("stub.html") #code for the function
 
-
+@app.route('/calendar/')
+def calendar():
+    return render_template("calendar.html")
 
 
 
