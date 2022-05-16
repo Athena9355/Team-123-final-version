@@ -83,7 +83,7 @@ def calendar():
 
 # runs the application on the development server
 if __name__ == "__main__":
-    app.run(debug=True,port=8080) #says "run this directly" app.run will run the server
+    app.run(debug=True,port=8000) #says "run this directly" app.run will run the server
 
 #index.html is standard
 
