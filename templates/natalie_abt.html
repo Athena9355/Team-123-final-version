@@ -1,10 +1,139 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<!-- Extending the predefined project layout -->
+{% extends "layouts/base.html" %}
+
+<!- This variable sets name of browser tab  -->
+{% set project = "Natalie" %}
+
+<!- This is a replacement block for Body in base.html -->
+{% block body %}
+<!- Try building a new body here ->
+
+<!-- this is the title and the name bar code -->
+<!--suppress CssUnknownTarget -->
+<!-- <body style="background-image:url('https://thumbs.gfycat.com/LastDampGhostshrimp-size_restricted.gif');
+                                background-position: center; background-repeat: no-repeat; background-size: cover;  background-attachment:fixed;"> -->
+
+<!--  <div class="col-12"> -->
+<!--</div> -->
+
+<div style="margin: 2% 5% 7%; text-align:left; font-family: Arial,serif; color: #ffffff;
+                                                                           background-color: rgba(0,0,0,0.4);">
+    <!--#faf9e3 -->
+    <h1 style="margin: 2% 5%; text-align:center; font-family: Courier New,serif; color: #ffffff;
+                             ">Welcome to Natalie's About Page!</h1>
+</div>
+
+
+
+<script type="text/javascript" src="javascript.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Jiggle Into JavaScript</title>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
 </head>
+
 <body>
 
+
+
+
 </body>
-</html>
+<!--this is the first paragraph code -->
+<div class="center-block" style="margin: 2%; text-align: left; font-family: arial; color: #ffffff; background-color: #00000066;" >
+    <h3 style="font-family: Courier New; color: #ffffff; margin: 2% ">Hello!</h3>
+    <p style="font-family: arial; color: #ffffff; margin: 2%">I'm a junior at Del Norte. Some of my hobbies are softball and field hockey!</p>
+
+    <h3 style="font-family: Courier New; color: #ffffff; margin: 2% ">Click on the image to toggle mask and no mask:</h3>
+
+
+    <img src="/static/assets/nataliemask.jpg" style="margin: 2%" width="281.25" height="375" id="imgClickAndChange" onclick="changeImage()"/>
+
+
+    <h3 style="font-family: Courier New; color: #ffffff; margin: 2% ">Here is a random fact about a year:</h3>
+
+
+    <p style="margin: 2%"> {{ date }} {{ year }} </p>
+    <p style="margin: 2%"> {{ quote }}  </p>
+
+    <h3 style="font-family: Courier New; color: #ffffff; margin: 2% ">Here is my Create Task Ideas!</h3>
+    <p style="margin: 2%">Home page that has buttons that take the user to the most common features on the website , ex: a button that take you to a homework timer or a music channel. Home page that has a short description of what the website does shows the different functions of our website, SAT/ACT prep daily questions, music page that plays relaxing music for studying, homework timer that alternates between work time and breaks, ex: 25 minutes of work and 5 minute break and after certain rounds there is a larger 15 minute break. User can change break and work times. Theme that goes along with the main project.</p>
+
+
+    <br> <br> <br>
+
+    <p style="margin: 2%">Press the buttons to change the box!</p>
+
+    <div id="box" style="height:150px; width:150px; background-color:orange; margin:25px"></div>
+
+    <button id="button1">Grow</button>
+    <button id="button2">Blue</button>
+    <button id="button3">Fade</button>
+    <button id="button4">Reset</button>
+
+</div>
+
+
+<script>
+    function changeImage() {
+
+        if (document.getElementById("imgClickAndChange").src.includes('nataliemask.jpg'))
+        {
+            document.getElementById("imgClickAndChange").src = "/static/assets/nataliepic.jpg";
+        }
+        else{
+            document.getElementById("imgClickAndChange").src ="/static/assets/nataliemask.jpg"
+        }
+    }
+
+
+
+
+    document.getElementById("button1").addEventListener("click",
+        function() {
+            document.getElementById("box").style.height = "400px";
+            document.getElementById("box").style.width = "400px";
+        }
+    );
+
+    document.getElementById("button2").addEventListener("click",
+        function() {
+            document.getElementById("box").style.backgroundColor = "blue";
+        }
+    );
+
+
+    document.getElementById("button3").addEventListener("click",
+        function() {
+            document.getElementById("box").style.opacity = ".5";
+        }
+    );
+
+
+    document.getElementById("button4").addEventListener("click",
+        function() {
+            document.getElementById("box").style.height = "150px";
+            document.getElementById("box").style.width = "150px";
+            document.getElementById("box").style.backgroundColor = "orange";
+            document.getElementById("box").style.opacity = "100";
+        }
+    );
+
+    document.getElementById("button5").addEventListener("click",
+        function() {
+            document.getElementById("Date").style.fontcolor = "pink";
+        }
+    );
+
+
+</script>
+
+
+<br>
+
+{% endblock %}
+
+<!- This is turning off birds background from base.html -->
+{% block background %}
+{% endblock %}
