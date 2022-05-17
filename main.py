@@ -78,9 +78,9 @@ def stub():
 def calendar():
     return render_template("calendar.html")
 
-@app.route('/index2/')
-def index2():
-    return render_template("index2.html")
+@app.route('/thread/')
+def thread():
+    return render_template("thread.html")
 
 
 
