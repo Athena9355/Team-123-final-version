@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drawing</title>
+</head>
+<body>
+<!DOCTYPE html>
+
+{% extends "layouts/base.html" %}
+
+<!- This variable sets name of browser tab  -->
+{% set project = "Drawing" %}
+
+<!- This is a replacement block for Body in base.html -->
+{% block body %}
+<!- Try building a new body here ->
+
+
+<html>
+<script type="text/javascript">
+    var canvas, ctx, flag = false,
+        prevX = 0,
+        currX = 0,
+        prevY = 0,
+        currY = 0,
+        dot_flag = false;
+
+    var x = "black",
+        y = 2;
+
+    function init() {
+        canvas = document.getElementById('can');
+        ctx = canvas.getContext("2d");
+        w = canvas.width;
+        h = canvas.height;
+
+        canvas.addEventListener("mousemove", function (e) {
+            findxy('move', e)
+        }, false);
+        canvas.addEventListener("mousedown", function (e) {
+            findxy('down', e)
+        }, false);
+        canvas.addEventListener("mouseup", function (e) {
+            findxy('up', e)
+        }, false);
+        canvas.addEventListener("mouseout", function (e) {
+            findxy('out', e)
+        }, false);
+    }
+
+    function color(obj) {
+        switch (obj.id) {
+            case "pink":
+                x = "#d98ca3";
+                break;
+            case "red":
+                x = "#c55151";
+                break;
+            case "orange":
+                x = "#c98862";
+                break;
+            case "yellow":
+                x = "#e7cf81";
+                break;
+            case "lime":
+                x = "#9eb76b";
+                break;
+            case "green":
+                x = "#77a466";
+                break;
+            case "light blue":
+                x = "#81c8dc";
+                break;
+            case "blue":
+                x = "#465eb7";
+                break;
+            case "purple":
+                x = "#9e68bd";
+                break;
+            case "black":
+                x = "black";
+                break;
+            case "white":
+                x = "white";
+                break;
+        }
+        if (x == "white") y = 14;
+        else y = 2;
+
+    }
+
+    function draw() {
+        ctx.beginPath();
+        ctx.moveTo(prevX, prevY);
+        ctx.lineTo(currX, currY);
+        ctx.strokeStyle = x;
+        ctx.lineWidth = y;
+        ctx.stroke();
+        ctx.closePath();
+    }
+
+    function erase() {
+        var m = confirm("Are you sure you want to clear?");
+        if (m) {
+            ctx.clearRect(0, 0, w, h);
+            document.getElementById("canvasimg").style.display = "none";
+        }
+    }
+
+    function save() {
+        document.getElementById("canvasimg").style.border = "2px solid";
+        var dataURL = canvas.toDataURL();
+        document.getElementById("canvasimg").src = dataURL;
+        document.getElementById("canvasimg").style.display = "inline";
+    }
+
+    function findxy(res, e) {
+        if (res == 'down') {
+            prevX = currX;
+            prevY = currY;
+            currX = e.clientX - canvas.offsetLeft;
+            currY = e.clientY - canvas.offsetTop;
+
+            flag = true;
+            dot_flag = true;
+            if (dot_flag) {
+                ctx.beginPath();
+                ctx.fillStyle = x;
+                ctx.fillRect(currX, currY, 2, 2);
+                ctx.closePath();
+                dot_flag = false;
+            }
+        }
+        if (res == 'up' || res == "out") {
+            flag = false;
+        }
+        if (res == 'move') {
+            if (flag) {
+                prevX = currX;
+                prevY = currY;
+                currX = e.clientX - canvas.offsetLeft;
+                currY = e.clientY - canvas.offsetTop;
+                draw();
+            }
+        }
+    }
+</script>
+
+
+
+<style>
+    html, body{
+        margin: 0;
+        height: 100%;
+    }
+
+</style>
+
+
+<body onload="init()">
+<canvas id="can" width="400" height="400" style="position:absolute;top:10%;left:10%;border:2px solid; background-color: #ffffff"></canvas>
+    <div style="background-color: white; color: #454e54; position:absolute;top:10%;left:43%; margin: 2%">Choose Color: </div>
+        <div style="position:absolute;top:14%;left:43%;width:15px;height:15px;background:#d98ca3; margin: 2%; border: 1px solid; border-color: white" id="pink" onclick="color(this)"></div>
+        <div style="position:absolute;top:14%;left:45%;width:15px;height:15px;background:#c55151; margin: 2%; border: 1px solid; border-color: white" id="red" onclick="color(this)"></div>
+        <div style="position:absolute;top:14%;left:47%;width:15px;height:15px;background:#c98862; margin: 2%; border: 1px solid; border-color: white" id="orange" onclick="color(this)"></div>
+        <div style="position:absolute;top:14%;left:49%;width:15px;height:15px;background:#e7cf81; margin: 2%; border: 1px solid; border-color: white" id="yellow" onclick="color(this)"></div>
+        <div style="position:absolute;top:14%;left:51%;width:15px;height:15px;background:#9eb76b; margin: 2%; border: 1px solid; border-color: white" id="lime" onclick="color(this)"></div>
+        <div style="position:absolute;top:17%;left:43%;width:15px;height:15px;background:#508051; margin: 2%; border: 1px solid; border-color: white" id="green" onclick="color(this)"></div>
+        <div style="position:absolute;top:17%;left:45%;width:15px;height:15px;background:#81c8dc; margin: 2%; border: 1px solid; border-color: white" id="light blue" onclick="color(this)"></div>
+        <div style="position:absolute;top:17%;left:47%;width:15px;height:15px;background:#465eb7; margin: 2%; border: 1px solid; border-color: white" id="blue" onclick="color(this)"></div>
+        <div style="position:absolute;top:17%;left:49%;width:15px;height:15px;background:#9e68bd; margin: 2%; border: 1px solid; border-color: white" id="purple" onclick="color(this)"></div>
+        <div style="position:absolute;top:17%;left:51%;width:15px;height:15px;background:black; margin: 2%; border: 1px solid; border-color: white" id="black" onclick="color(this)"></div>
+    <div style="background-color: rgb(255,255,255); color: #454e54; position:absolute;top:20%;left:43%; margin: 2%">Eraser: </div>
+        <div style="position:absolute;top:25%;left:45%;width:15px;height:15px;background:rgba(255,255,255,0);border:2px solid; margin: 2%" id="white" onclick="color(this)"></div>
+    <img id="canvasimg" style="position:absolute;top:10%;left:55%; display:none; background-color: white">
+    <input type="button" value="save" id="btn" size="30" onclick="save()" style="position:absolute;top:70%;left:40%;">
+    <input type="button" value="clear" id="clr" size="23" onclick="erase()" style="position:absolute;top:70%;left:15%;">
+</body>
+</html>
+
+
+{% endblock %}
+
+<!- This is turning off birds background from base.html -->
+{% block background %}
+{% endblock %}

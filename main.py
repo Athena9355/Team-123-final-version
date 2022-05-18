@@ -54,6 +54,10 @@ def login():
 def discussion():
     return render_template("discussion.html")
 
+@app.route('/drawing/')
+def drawing():
+    return render_template("drawing.html")
+
 @app.route('/kamya/',methods=['GET', 'POST'])
 def kamya():
     url = "https://random-words5.p.rapidapi.com/getMultipleRandom"
