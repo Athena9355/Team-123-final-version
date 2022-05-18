@@ -86,13 +86,23 @@ def thread():
 def library():
     return render_template("library.html")
 
+@app.route('/bookapi/',methods=['GET', 'POST'])
+def bookapi():
+    url = "https://ny-times-news-titles-and-urls.p.rapidapi.com/news"
 
+    headers = {
+        "X-RapidAPI-Host": "ny-times-news-titles-and-urls.p.rapidapi.com",
+        "X-RapidAPI-Key": "baf45032bdmsh1fb0709d81a2d0ep1d1bfejsnb09953cc9b71"
+    }
+    response = requests.request("GET", url, headers=headers)
+    return render_template("bookapi.html", book=response.json())
+    print(response.text)
 
 
 
 # runs the application on the development server
 if __name__ == "__main__":
-    app.run(debug=True,port=7000) #says "run this directly" app.run will run the server
+    app.run(debug=True,port=9000) #says "run this directly" app.run will run the server
 
 #index.html is standard
 
