@@ -66,7 +66,9 @@ def stub():
     return render_template("stub.html") #code for the function
 
 
-
+@app.route('/dictionary')
+def dictionary():
+    return render_template("dictionary.html")
 
 
 
