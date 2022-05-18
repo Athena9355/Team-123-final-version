@@ -1,62 +1,65 @@
 """control dependencies to support CRUD app routes and APIs"""
 from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response
-from flask_restful import Api, Resource
-import requests
-from cruddy.model import Users
+from flask_login import login_required
+
+from cruddy.query import *
 
 # blueprint defaults https://flask.palletsprojects.com/en/2.0.x/api/#blueprint-objects
 app_crud = Blueprint('crud', __name__,
                      url_prefix='/crud',
-                     template_folder='templates/crud/',
+                     template_folder='templates/cruddy/',
                      static_folder='static',
-                     static_url_path='assets')
+                     static_url_path='static')
 
-# API generator https://flask-restful.readthedocs.io/en/latest/api.html#id1
-api = Api(app_crud)
-
-""" Application control for CRUD is main focus of this File, key features:
-    1.) User table queries
-    2.) app routes (Blueprint)
-    3.) API routes
-    4.) API testing
+""" Blueprint is established to isolate Application control code for CRUD operations, key features:
+    1.) 'Users' table control methods, controls relationship between User Actions and Database Model
+    2.) Control methods are achieved using app routes for each CRUD operations
+    3.) login required to restrict CRUD operations to identified users
 """
 
-""" Users table queries"""
 
-
-# User/Users extraction from SQL
-def users_all():
-    """converts Users table into JSON list """
-    return [peep.read() for peep in Users.query.all()]
-
-
-def users_ilike(term):
-    """filter Users table by term into JSON list """
-    term = "%{}%".format(term)  # "ilike" is case insensitive and requires wrapped  %term%
-    table = Users.query.filter((Users.name.ilike(term)) | (Users.email.ilike(term)))
-    return [peep.read() for peep in table]
-
-
-# User extraction from SQL
-def user_by_id(userid):
-    """finds User in table matching userid """
-    return Users.query.filter_by(userID=userid).first()
-
-
-# User extraction from SQL
-def user_by_email(email):
-    """finds User in table matching email """
-    return Users.query.filter_by(email=email).first()
-
-
-""" app route section """
-
-
-# Default URL
+# Default URL for Blueprint
 @app_crud.route('/')
+@login_required  # Flask-Login uses this decorator to restrict acess to logged in users
 def crud():
     """obtains all Users from table and loads Admin Form"""
     return render_template("crud.html", table=users_all())
+
+
+# Flask-Login directs unauthorised users to this unauthorized_handler
+@login_manager.unauthorized_handler
+def unauthorized():
+    """Redirect unauthorized users to Login page."""
+    return redirect(url_for('crud.crud_login'))
+
+
+# if login url, show phones table only
+@app_crud.route('/login/', methods=["GET", "POST"])
+def crud_login():
+    # obtains form inputs and fulfills login requirements
+    if request.form:
+        email = request.form.get("email")
+        password = request.form.get("password")
+        if login(email, password):       # zero index [0] used as email is a tuple
+            return redirect(url_for('crud.crud'))
+
+    # if not logged in, show the login page
+    return render_template("login.html")
+
+
+@app_crud.route('/authorize/', methods=["GET", "POST"])
+def crud_authorize():
+    # check form inputs and creates user
+    if request.form:
+        # validation should be in HTML
+        user_name = request.form.get("user_name")
+        email = request.form.get("email")
+        password1 = request.form.get("password1")
+        password2 = request.form.get("password1")           # password should be verified
+        if authorize(user_name, email, password1):    # zero index [0] used as user_name and email are type tuple
+            return redirect(url_for('crud.crud_login'))
+    # show the auth user page if the above fails for some reason
+    return render_template("authorize.html")
 
 
 # CRUD create/add
@@ -127,120 +130,3 @@ def search_term():
     term = req['term']
     response = make_response(jsonify(users_ilike(term)), 200)
     return response
-
-
-""" API routes section """
-
-
-class UsersAPI:
-    # class for create/post
-    class _Create(Resource):
-        def post(self, name, email, password, phone):
-            po = Users(name, email, password, phone)
-            person = po.create()
-            if person:
-                return person.read()
-            return {'message': f'Processed {name}, either a format error or {email} is duplicate'}, 210
-
-    # class for read/get
-    class _Read(Resource):
-        def get(self):
-            return users_all()
-
-    # class for read/get
-    class _ReadILike(Resource):
-        def get(self, term):
-            return users_ilike(term)
-
-    # class for update/put
-    class _Update(Resource):
-        def put(self, email, name):
-            po = user_by_email(email)
-            if po is None:
-                return {'message': f"{email} is not found"}, 210
-            po.update(name)
-            return po.read()
-
-    class _UpdateAll(Resource):
-        def put(self, email, name, password, phone):
-            po = user_by_email(email)
-            if po is None:
-                return {'message': f"{email} is not found"}, 210
-            po.update(name, password, phone)
-            return po.read()
-
-    # class for delete
-    class _Delete(Resource):
-        def delete(self, userid):
-            po = user_by_id(userid)
-            if po is None:
-                return {'message': f"{userid} is not found"}, 210
-            data = po.read()
-            po.delete()
-            return data
-
-    # building RESTapi resource
-    api.add_resource(_Create, '/create/<string:name>/<string:email>/<string:password>/<string:phone>')
-    api.add_resource(_Read, '/read/')
-    api.add_resource(_ReadILike, '/read/ilike/<string:term>')
-    api.add_resource(_Update, '/update/<string:email>/<string:name>')
-    api.add_resource(_UpdateAll, '/update/<string:email>/<string:name>/<string:password>/<string:phone>')
-    api.add_resource(_Delete, '/delete/<int:userid>')
-
-
-""" API testing section """
-
-
-def api_tester():
-    # local host URL for model
-    url = 'http://localhost:5222/crud'
-
-    # test conditions
-    API = 0
-    METHOD = 1
-    tests = [
-        ['/create/Wilma Flintstone/wilma@bedrock.org/123wifli/0001112222', "post"],
-        ['/create/Fred Flintstone/fred@bedrock.org/123wifli/0001112222', "post"],
-        ['/read/', "get"],
-        ['/read/ilike/John', "get"],
-        ['/read/ilike/com', "get"],
-        ['/update/wilma@bedrock.org/Wilma S Flintstone/123wsfli/0001112229', "put"],
-        ['/update/wilma@bedrock.org/Wilma Slaghoople Flintstone', "put"],
-        ['/delete/4', "delete"],
-        ['/delete/5', "delete"],
-    ]
-
-    # loop through each test condition and provide feedback
-    for test in tests:
-        print()
-        print(f"({test[METHOD]}, {url + test[API]})")
-        if test[METHOD] == 'get':
-            response = requests.get(url + test[API])
-        elif test[METHOD] == 'post':
-            response = requests.post(url + test[API])
-        elif test[METHOD] == 'put':
-            response = requests.put(url + test[API])
-        elif test[METHOD] == 'delete':
-            response = requests.delete(url + test[API])
-        else:
-            print("unknown RESTapi method")
-            continue
-
-        print(response)
-        try:
-            print(response.json())
-        except:
-            print("unknown error")
-
-
-def api_printer():
-    print()
-    print("Users table")
-    for user in users_all():
-        print(user)
-
-
-"""validating api's requires server to be running"""
-if __name__ == "__main__":
-    api_tester()
-    api_printer()

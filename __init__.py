@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from flask_login import LoginManager
 
 """This needs to be isolated to support blueprints and models"""
 app = Flask(__name__)
@@ -11,4 +12,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = dbURI
 app.config['SECRET_KEY'] = 'SECRET_KEY'
 db = SQLAlchemy(app)
 Migrate(app, db)
-
+# Setup LoginManager object (app)
+login_manager = LoginManager()
+login_manager.init_app(app)
