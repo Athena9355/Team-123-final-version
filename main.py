@@ -82,6 +82,10 @@ def calendar():
 def thread():
     return render_template("thread.html")
 
+@app.route('/plots/')
+def plots():
+    return render_template("plots.html")
+
 @app.route('/library/')
 def library():
     return render_template("library.html")
