@@ -96,13 +96,15 @@ def library():
 
 @app.route('/bookapi/',methods=['GET', 'POST'])
 def bookapi():
-    url = "https://ny-times-news-titles-and-urls.p.rapidapi.com/news"
+    url = "https://google-books.p.rapidapi.com/volumes"
+
+    querystring = {"key":"undefined"}
 
     headers = {
-        "X-RapidAPI-Host": "ny-times-news-titles-and-urls.p.rapidapi.com",
+        "X-RapidAPI-Host": "google-books.p.rapidapi.com",
         "X-RapidAPI-Key": "baf45032bdmsh1fb0709d81a2d0ep1d1bfejsnb09953cc9b71"
     }
-    response = requests.request("GET", url, headers=headers)
+    response = requests.request("GET", url, headers=headers, params=querystring)
     return render_template("bookapi.html", book=response.json())
     print(response.text)
 
