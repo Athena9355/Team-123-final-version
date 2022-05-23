@@ -82,6 +82,10 @@ def stub():
 def calendar():
     return render_template("calendar.html")
 
+@app.route('/search/')
+def search():
+    return render_template("search.html")
+
 @app.route('/thread/')
 def thread():
     return render_template("thread.html")
