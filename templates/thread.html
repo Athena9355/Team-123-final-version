@@ -1,3 +1,5 @@
+{% extends "layouts/base.html" %}
+{% block body %}
 <style>
     body {
         margin: 10px 60px;
@@ -7,17 +9,18 @@
         color: black;
     }
     h1, h4, ol {
-        margin: 0;
+        color: #e8a1a5;
+
     }
     p {
         margin: 5px 0;
     }
     .top-bar {
-        background-color: skyblue;
+        background-color: #e8a1a5;
         padding: 0 40px;
     }
     .main {
-        background-color: #F6F6EF;
+        background-color: #ffefbb;
         padding: 10px 15px;
     }
     .row {
@@ -25,7 +28,7 @@
     }
     .bottom {
         display: flex;
-        color: grey;
+        color: cadetblue;
         font-size: 12px;
     }
     .timestamp {
@@ -35,11 +38,11 @@
 
 
 <body>
-<div class="top-bar">
+<!--<div class="top-bar">
     <h1>
         Book talks
     </h1>
-</div>
+</div> -->
 <div class="main">
     <ol>
     </ol>
@@ -190,3 +193,4 @@ if (localStorage && localStorage.getItem('threads')) {
     })
 </script>
 </body>
+{% endblock %}
