@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43ff41c4-f193-4285-b1e4-bdd174a2c051" name="Changes" comment="log in set up on fib. fib now has the ability to log in to fib page. information on original fib isn't blocked out before log in" />
+    <list default="true" id="43ff41c4-f193-4285-b1e4-bdd174a2c051" name="Changes" comment="ignore">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,7 +50,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.proportion" value="0.15457788" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
@@ -66,7 +70,7 @@
       <recent name="$PROJECT_DIR$/crud/templates/crud" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.Team-123-final-version">
     <configuration name="Team-123-final-version" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -155,7 +159,36 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Team-123-final-version2" type="Python.FlaskServer">
+      <module name="Team-123-final-version2" />
+      <option name="target" value="$PROJECT_DIR$/__init__.py" />
+      <option name="targetType" value="PATH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Python.FlaskServer">
+      <module name="Team-123-final-version2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Flask server.Team-123-final-version2" />
       <item itemvalue="Python.Team-123-final-version" />
       <item itemvalue="Python.Team-123-final-version1" />
       <item itemvalue="Python.test" />
@@ -184,6 +217,10 @@
       <workItem from="1650072029077" duration="3628000" />
       <workItem from="1650226407644" duration="4225000" />
       <workItem from="1653333445060" duration="61000" />
+      <workItem from="1653334098435" duration="503000" />
+      <workItem from="1653334669137" duration="113000" />
+      <workItem from="1653335660867" duration="569000" />
+      <workItem from="1653336244924" duration="378000" />
     </task>
     <task id="LOCAL-00001" summary="crud database set up">
       <created>1649359630224</created>
@@ -276,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650253455271</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="ignore">
+      <created>1653333962207</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1653333962207</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +348,8 @@
     <MESSAGE value="hack 3 attempt" />
     <MESSAGE value="login set up on fib" />
     <MESSAGE value="log in set up on fib. fib now has the ability to log in to fib page. information on original fib isn't blocked out before log in" />
-    <option name="LAST_COMMIT_MESSAGE" value="log in set up on fib. fib now has the ability to log in to fib page. information on original fib isn't blocked out before log in" />
+    <MESSAGE value="ignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="ignore" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
@@ -314,8 +359,9 @@
     <SUITE FILE_PATH="coverage/Team_123_final_version2$Team_123_final_version1.coverage" NAME="Team-123-final-version1 Coverage Results" MODIFIED="1653333868420" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Team_123_final_version$Team_123_final_version.coverage" NAME="Team-123-final-version Coverage Results" MODIFIED="1649449045942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Team_123_final_version1$Team_123_final_version1.coverage" NAME="Team-123-final-version1 Coverage Results" MODIFIED="1650226806598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Team_123_final_version2$test.coverage" NAME="test Coverage Results" MODIFIED="1653333702015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Team_123_final_version2$test.coverage" NAME="test Coverage Results" MODIFIED="1653333927362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Team_123_final_version1$Team_123_final_version.coverage" NAME="Team-123-final-version Coverage Results" MODIFIED="1649546518892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Team_123_final_version2$Team_123_final_version.coverage" NAME="Team-123-final-version Coverage Results" MODIFIED="1653336381250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Team_123_final_version2$Team_123_final_version2.coverage" NAME="Team-123-final-version2 Coverage Results" MODIFIED="1653333075473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
