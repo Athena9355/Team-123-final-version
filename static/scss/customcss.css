@@ -69,18 +69,20 @@ a {
 .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
-    padding: 15px 40px;
+    padding: 50px 40px;
     display: inline-block;
-    border-radius: 100px;
+    border-radius: 10px;
     transition: all .2s;
     position: absolute;
     color: white;
     font-size: 2.5em;
+
 }
 
 .btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
+
 }
 
 .btn:active {
@@ -114,7 +116,7 @@ html, body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     color:white;
-    font-family: "Bryndan Write";
+    font-family: "Trebuchet MS";
 }
 
 .dark-mode {
@@ -162,11 +164,13 @@ a {
     text-decoration: none;
     padding: 15px 40px;
     display: inline-block;
-    border-radius: 100px;
+    border-radius: 50px;
     transition: all .2s;
     position: absolute;
-    color: black;
-    font-size: 2.5em;
+    color: #ffffff;
+    font-size: 2em;
+    background-color: cadetblue;
+
 }
 
 .btn:hover {
@@ -183,9 +187,11 @@ a {
     margin: auto;
 }
 center {
-    text-align: center;}
+    text-align: center;
+}
+
 button {
-    background-color:#573C76; /* purple */
+    background-color:cadetblue; /* purple */
     border: none;
     color: white;
     padding: 15px 32px;
@@ -246,7 +252,7 @@ button {
     background-color: #573C76;
     color: white;
     border-radius: 12px;
-    padding: 8px 16px;
+    padding: 8px 8px;
     margin: 4px 2px;
     font-size: large;
     text-align: center;
