@@ -1,8 +1,7 @@
 """control dependencies to support CRUD app routes and APIs"""
 from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response
 from flask_login import login_required
-
-from cruddy.query import *
+from cruddy.query import Users, users_all, user_by_id, users_ilike
 
 # blueprint defaults https://flask.palletsprojects.com/en/2.0.x/api/#blueprint-objects
 app_crud = Blueprint('crud', __name__,
@@ -24,45 +23,6 @@ app_crud = Blueprint('crud', __name__,
 def crud():
     """obtains all Users from table and loads Admin Form"""
     return render_template("crud.html", table=users_all())
-
-
-# Flask-Login directs unauthorised users to this unauthorized_handler
-@login_manager.unauthorized_handler
-def unauthorized():
-    """Redirect unauthorized users to Login page."""
-    return redirect(url_for('crud.crud_login'))
-
-
-# if login url, show phones table only
-@app_crud.route('/login/', methods=["GET", "POST"])
-def crud_login():
-    # obtains form inputs and fulfills login requirements
-    if request.form:
-        email = request.form.get("email")
-        password = request.form.get("password")
-        if login(email, password):       # zero index [0] used as email is a tuple
-            return redirect(url_for('crud.crud'))
-
-    # if not logged in, show the login page
-    return render_template("login.html")
-
-
-@app_crud.route('/authorize/', methods=["GET", "POST"])
-def crud_authorize():
-    # check form inputs and creates user
-    print("I am here")
-    if request.form:
-        # validation should be in HTML
-        user_name = request.form.get("user_name")
-        email = request.form.get("email")
-        password1 = request.form.get("password1")
-        password2 = request.form.get("password1")           # password should be verified
-        if authorize(user_name, email, password1):    # zero index [0] used as user_name and email are type tuple
-            print("I am here-2")
-            return redirect(url_for('crud.crud_login'))
-    # show the auth user page if the above fails for some reason
-    print("I am here-2")
-    return render_template("authorize.html")
 
 
 # CRUD create/add

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-{% extends "layouts/base.html" %}
+{% extends "layout.html" %}
 
 {% block content %}
 
@@ -14,12 +14,10 @@
 
     <div class="container bg-secondary py-4">
         <div class="p-5 mb-4 bg-light text-dark rounded-3">
-            <form method="POST" ID="authUser" action={{url_for('crud.crud_authorize')}} >
+            <form method="POST" ID="authUser" action={{url_for('main_authorize')}} >
                 <table>
                     <tr><th><label for="user_name">Username</label></th></tr>
                     <tr><td><input type="text" id='user_name' name="user_name" size="20" required></td></tr>
-                    <tr><th><label for="phone">phone</label></th></tr>
-                    <tr><td><input type="text" id='phone' name="phone" size="20" required></td></tr>
                     <tr><th><label for="email">Email</label></th></tr>
                     <tr><td><input type="email" id="email" name="email" size="20" required></td></tr>
                     <tr><th><label for="password1">Password</label></th></tr>
@@ -27,7 +25,7 @@
                     <tr><th><label for="password2">Password Confirmation</label></th></tr>
                     <tr><td><input type="password" id='password2' name="password2" size="20" required></td></tr>
                     <tr><th><input type="submit" value="Submit"></th></tr>
-                    <tr><td><a href={{url_for('crud.crud_login')}}>Log In</a></td></tr>
+                    <tr><td><a href={{url_for('main_login')}}>Log In</a></td></tr>
                 </table>
             </form>
         </div>
