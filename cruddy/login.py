@@ -14,7 +14,7 @@ def is_user(email, password):
 
 
 # login user based off of email and password
-def login(email, password):
+def mylogin(email, password):
     # sequence of checks
     if current_user.is_authenticated:  # return true if user is currently logged in
         return True

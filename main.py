@@ -2,16 +2,13 @@ from flask import Flask, render_template, request, redirect, url_for
 from __init__ import app, login_manager
 from flask_login import login_required
 
-
 from cruddy.app_crud import app_crud
-
 
 from pathlib import Path
 
-from cruddy.login import logout, authorize
+from cruddy.login import mylogin,logout, authorize
 
 app.register_blueprint(app_crud)
-
 
 # connects default URL to render index.html
 @app.route('/') #this is the first page. runs the function: "def index". have to add tab below index. defined roots, roots are connected to functions
@@ -36,7 +33,7 @@ def main_login():
     if request.form:
         email = request.form.get("email")
         password = request.form.get("password")
-        if login(email, password):
+        if mylogin(email, password):
             try:        # try to redirect to next page
                 temp = next_page
                 next_page = None
