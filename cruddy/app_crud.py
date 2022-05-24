@@ -50,6 +50,7 @@ def crud_login():
 @app_crud.route('/authorize/', methods=["GET", "POST"])
 def crud_authorize():
     # check form inputs and creates user
+    print("I am here")
     if request.form:
         # validation should be in HTML
         user_name = request.form.get("user_name")
@@ -57,8 +58,10 @@ def crud_authorize():
         password1 = request.form.get("password1")
         password2 = request.form.get("password1")           # password should be verified
         if authorize(user_name, email, password1):    # zero index [0] used as user_name and email are type tuple
+            print("I am here-2")
             return redirect(url_for('crud.crud_login'))
     # show the auth user page if the above fails for some reason
+    print("I am here-2")
     return render_template("authorize.html")
 
 
