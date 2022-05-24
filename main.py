@@ -8,7 +8,7 @@ from cruddy.app_crud import app_crud
 
 from pathlib import Path
 
-from cruddy.login import logout
+from cruddy.login import logout, authorize
 
 app.register_blueprint(app_crud)
 
