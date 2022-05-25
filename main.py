@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from __init__ import app, login_manager
 from flask_login import login_required
-
+from notey.app_notes import app_notes
 from cruddy.app_crud import app_crud
 
 from pathlib import Path
@@ -9,6 +9,7 @@ from pathlib import Path
 from cruddy.login import mylogin,logout, authorize
 
 app.register_blueprint(app_crud)
+app.register_blueprint(app_notes)
 
 # connects default URL to render index.html
 @app.route('/') #this is the first page. runs the function: "def index". have to add tab below index. defined roots, roots are connected to functions
@@ -168,7 +169,7 @@ def bookapi():
 
 # runs the application on the development server
 if __name__ == "__main__":
-    app.run(debug=True,port=8000) #says "run this directly" app.run will run the server
+    app.run(debug=True,port=7000) #says "run this directly" app.run will run the server
 
 #index.html is standard
 
