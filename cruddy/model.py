@@ -60,7 +60,7 @@ class Users(UserMixin, db.Model):
     email = db.Column(db.String(255), unique=True, nullable=False)
     password = db.Column(db.String(255), unique=False, nullable=False)
     phone = db.Column(db.String(255), unique=False, nullable=False)
-
+    notes = db.relationship("Notes", cascade='all, delete', backref='users', lazy=True)
     # constructor of a User object, initializes of instance variables within object
     def __init__(self, name, email, password, phone):
         self.name = name
