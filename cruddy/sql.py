@@ -1,5 +1,5 @@
 from __init__ import db
-from mycrud.model import Users
+from cruddy.model import Users
 import random
 
 # Fetch also allows for an asynchronous operation between Javascript and backend where you don't have to wait for the result
