@@ -1,19 +1,16 @@
 from flask import Flask, render_template, request, redirect, url_for
 from __init__ import app, login_manager
 from flask_login import login_required
-from notey.app_notes import app_notes
-from cruddy.app_crud import app_crud
-import json
-import requests
 
+from cruddy.app_crud import app_crud
+from contenty.app_content import app_content
 
 from pathlib import Path
-
 
 from cruddy.login import mylogin,logout, authorize
 
 app.register_blueprint(app_crud)
-app.register_blueprint(app_notes)
+app.register_blueprint(app_content)
 
 # connects default URL to render index.html
 @app.route('/') #this is the first page. runs the function: "def index". have to add tab below index. defined roots, roots are connected to functions
@@ -169,32 +166,11 @@ def bookapi():
     return render_template("bookapi.html", book=response.json())
     print(response.text)
 
-@app.route('/dictionary/', methods=['GET','POST'])
-def dictionary():
-    try:
-        keyword = request.form['keyword']
-    except:
-        keyword = "Book"
-    url = "https://twinword-word-graph-dictionary.p.rapidapi.com/definition/"
-    querystring = {"entry":keyword}
-    headers = {
-        'x-rapidapi-host': "twinword-word-graph-dictionary.p.rapidapi.com",
-        'x-rapidapi-key': "3d43659d98msh26d5e705bc7d8b6p1d6431jsnba44357aaf20"
-    }
-    response = requests.request("GET", url, headers=headers, params=querystring)
-    if response.status_code<400:
-        results = json.loads(response.content.decode("utf-8"))
-        return render_template("dictionary.html", results=results, word=keyword)
-    else:
-        return render_template("dictionary.html", word=keyword)
 
-@app.route('/quote/')
-def quote():
-    return render_template("quote.html")
 
 # runs the application on the development server
 if __name__ == "__main__":
-    app.run(debug=True,port=7997) #says "run this directly" app.run will run the server
+    app.run(debug=True,port=8000) #says "run this directly" app.run will run the server
 
 #index.html is standard
 
