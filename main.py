@@ -7,8 +7,12 @@ from cruddy.app_crud import app_crud
 from pathlib import Path
 
 from cruddy.login import mylogin,logout, authorize
+from contenty.app_content import app_content
+from notey.app_notes import app_notes
 
 app.register_blueprint(app_crud)
+app.register_blueprint(app_content)
+app.register_blueprint(app_notes)
 
 # connects default URL to render index.html
 @app.route('/') #this is the first page. runs the function: "def index". have to add tab below index. defined roots, roots are connected to functions
