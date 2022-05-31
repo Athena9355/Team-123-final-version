@@ -1,98 +1,107 @@
 {% extends "layouts/base.html" %}
-<!-- This variable sets name of browser tab  -->
+
+<!- This variable sets name of browser tab  -->
 {% set project = "Motivation" %}
 
-<!-- This is a replacement block for Body in base.html -->
+<!- This is a replacement block for Body in base.html -->
 {% block body %}
 
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
 
-<script>
-    var NumberOfWords = 5
+    <script>
+        var NumberOfWords = 5
 
-    var words = new BuildArray(NumberOfWords)
+        var words = new BuildArray(NumberOfWords)
 
-    // Use the following variables to
-    // defines countries:
+        // Use the following variables to
+        // defines countries:
+        words[1] = "There are two ways of spreading light: to be the candle or the mirror that reflects it.  – Edith Wharton"
+        words[2] = "Believe you can and you're halfway there. – Theodore Roosevelt"
+        words[3] = "If you're going through hell, keep going. – Winston Churchill"
+        words[4] = "No greater gift there is, than a generous heart. – Yoda"
+        words[5] = "Worrying is like paying a debt you don't owe. – Mark Twain"
+        function BuildArray(size){
+            this.length = size
+            for (var i = 1; i <= size; i++){
+                this[i] = null}
+            return this
+        }
 
-    function BuildArray(size){
-        this.length = size
-        for (var i = 1; i <= size; i++){
-            this[i] = null}
-        return this
-    }
-
-    function PickRandomWord(frm) {
+        function PickRandomWord(frm) {
 // Generate a random number between 1 and NumberOfWords
-        var rnd = Math.ceil(Math.random() * NumberOfWords)
+            var rnd = Math.ceil(Math.random() * NumberOfWords)
 
 // Display the word inside the text box
-        frm.WordBox.value = words[rnd]
-    }</script>
+            frm.WordBox.value = words[rnd]
+        }</script>
 
 
 
-<FORM NAME="WordForm">
-    <INPUT TYPE=TEXT NAME="WordBox" id="wordbox"><BR>
-    <INPUT TYPE=BUTTON VALUE="Generate" onClick="PickRandomWord(document.WordForm);" id="button">
+    <FORM NAME="WordForm">
+        <INPUT TYPE=TEXT NAME="WordBox" id="wordbox"><BR>
+        <INPUT TYPE=BUTTON VALUE="Generate" onClick="PickRandomWord(document.WordForm);" id="button">
 
-</FORM>
-<style>
-    body {
-        background-image:url('https://i.ytimg.com/vi/LS4VA38fGSU/maxresdefault.jpg');
-        background-repeat:no-repeat;
-        background-attachment:fixed;
-        background-size:cover;
-    }
+    </FORM>
+    <style>
+        body {
+            background-image:url('https://i.ytimg.com/vi/LS4VA38fGSU/maxresdefault.jpg');
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            background-size:cover;
+        }
 
-    h1 {
-        text-align: center;
-        margin: 20% 0 5% 0;
-    }
+        h1 {
+            text-align: center;
+            margin: 20% 0 5% 0;
+        }
 
-    #wordbox {
-        /*opacity: 0;*/
-        margin: 30px auto 0;
-        display: block;
-        width: 1000px;
-        height: 400px;
-        font-size: 15px;
-        text-align: center;
-        background: #e5fff5;
-        border-radius: 6px;
-        color: #black;
-        transition: 1s linear;
-    }
+        #wordbox {
+            /*opacity: 0;*/
+            margin: 30px auto 0;
+            display: block;
+            width: 1000px;
+            height: 400px;
+            font-size: 15px;
+            text-align: center;
+            background: #e5fff5;
+            border-radius: 6px;
+            color: #black;
+            transition: 1s linear;
+        }
 
-    #button {
-        background: #57693c;
-        border: 0;
-        color: #ffffff;
-        font-size: 20px;
-        padding: 1em 2em;
-        cursor: pointer;
-        margin: 0 auto 60px;
-        display: block;
-        text-align: center;
-        border-radius: 6px;
-        font-weight: bold;
-    }
-
-
-
-</style>
+        #button {
+            background: #57693c;
+            border: 0;
+            color: #ffffff;
+            font-size: 20px;
+            padding: 1em 2em;
+            cursor: pointer;
+            margin: 0 auto 60px;
+            display: block;
+            text-align: center;
+            border-radius: 6px;
+            font-weight: bold;
+        }
 
 
 
-</body>
-
-</html>
+    </style>
 
 
 
-</body>
+    </body>
 
-</html>
+    </html>
+
+
+
+    </body>
+
+    </html>
+{% endblock %}
+
+<!- This is turning off birds background from base.html -->
+{% block background %}
 {% endblock %}
