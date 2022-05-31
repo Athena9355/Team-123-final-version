@@ -1,0 +1,58 @@
+{% extends "layouts/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% block body %}
+
+<div class="container" style="background-color:skyblue">
+    <div class="center-block" style="margin: 5% 10% 10%;">
+        <div class="col-12" style="text-align: center;">
+            <br>
+            <p style="color: white; font-size: xx-large">New Articles of the Week</p>
+            <br>
+            <a href="{{url_for('bookapi')}}" class="button1">Start Over!</a>
+
+        </div>
+        <br>
+        <br>
+        <br>
+
+
+    </div>
+    <table style="margin: 2%">
+        <tr>
+            <p style="color:white ; font-size: x-large; text-align: center" id="result" onclick="newsy()"><strong> CLICK ME!</strong></p>
+
+            <script>
+                function newsy() {
+                    document.getElementById("result").innerHTML = "{{book}}";
+                }
+            </script>
+        </tr>
+        <tr>
+            <br>
+            <br>
+            <br>
+            <th>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <p class="text-center" style="color: whitesmoke; font-size: large;text-align: center"  id="jsondata" onclick="nyc()" >Show JSON</p>
+
+                <script>
+                    function nyc() {
+                        document.getElementById("jsondata").innerHTML = "{{book}}";
+                    }
+                </script>
+            </td>
+        </tr>
+    </table>
+</div>
+<br>
+<br>
+{% endblock %}
+</html>
