@@ -1,0 +1,83 @@
+{% extends "layouts/base.html" %}
+
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dictionary</title>
+</head>
+<body>
+<form action="/dictionary/" method="POST" class="form">
+    <input type="text" placeholder="Search" name='keyword'>
+    <button type="Get Definitions">Get Definitions</button>
+</form>
+<div class="definition">
+    Word: {{ word }}
+</div>
+<div class="definition">
+    Noun Definitions: {{ results.meaning.noun }}
+</div>
+<div class="definition">
+    Verb Definitions: {{ results.meaning.verb }}
+</div>
+<div class="definition">
+    Adjective Definitions: {{ results.meaning.adjective }}
+</div>
+<div class="definition">
+    Adverb Definitions {{ results.meaning.adverb }}
+</div>
+</body>
+</html>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    form{
+        padding: 8px;
+        outline: none;
+        cursor: pointer;
+        border: 3px solid #e8a1a5;
+        border-radius: 5px;
+        background: #f9ecd9;
+        width: 25%;
+        margin: auto;
+    }
+
+    button{
+        padding: 8px;
+        outline: none;
+        cursor: pointer;
+        border: 3px solid #e8a1a5;
+        border-radius: 5px;
+        background: #f9ecd9;
+    }
+
+    button:hover{
+        background-color: cadetblue;
+        color: rgb(255, 255, 255);
+    }
+
+    .definition{
+        padding: 8px;
+        outline: none;
+        cursor: pointer;
+        border: 3px solid #e8a1a5;
+        border-radius: 5px;
+        background: #f9ecd9;
+        width: 70%;
+        margin: auto;
+    }
+
+</style>
+
+{% endblock %}
+{% block background %}
+{% endblock %}

@@ -50,7 +50,7 @@ a {
 }
 
 .fa:hover{
-    transform: translateY(10px);
+    transform: scale(1, 1);
 }
 
 .fa-youtube-play:hover{
@@ -124,7 +124,7 @@ html, body{
     --bs-body-bg:grey;
     navbutton_background_color: #E0E2E0;
     font-palette: dark;
-;
+
 }
 
 h1{
@@ -142,21 +142,6 @@ a {
     color: white;
 }
 
-.fa:hover{
-    transform: translateY(10px);
-}
-
-.fa-youtube-play:hover{
-    color:white;
-}
-
-.fa-twitter:hover{
-    color:black;
-}
-
-.fa-github:hover{
-    color: #000000;
-}
 
 .btn:link,
 .btn:visited {
