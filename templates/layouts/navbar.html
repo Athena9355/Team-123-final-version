@@ -13,22 +13,22 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #c27370; font-family: Trebuchet MS;">
 
 
-    <img src="https://cdn.picpng.com/book/book-thick-isolated-pink-peach-76969.png" height="40px" width="40px" style="margin-right: 10px">
+    <img src="https://cdn.picpng.com/book/book-thick-isolated-pink-peach-76969.png" height="40px" width="40px" style="margin-right: 15px">
     <a class="navbar-brand" href="{{ url_for('index') }}">{{basename}}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div style="margin-right: 0px" class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
             <!-- url_for is a Jinja2 pre-processor that finds route from function name (def) -->
-          <!--  <a class="nav-link" href="https://github.com/Athena9355/Team-123-final-version">GitHub Page</a> -->
-            <a style="font-size: 20px; font-family: 'Academy Engraved LET'" class="nav-link" href="/">Book Talk</a>
+            <a class="nav-link" href="https://github.com/Athena9355/Team-123-final-version">GitHub Page</a>
+            <a class="nav-link" href="/">Home</a>
             <a class="nav-link" href="/login">Login</a>
-            <a class="nav-link" href="/faqs">FAQs</a>
+            <a class="nav-link" href="/dictionary">Dictionary</a>
 
             <!-- stub is shown using the name of the route -->
 
-<!--
+
             <div class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarLabs" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     About Us !
@@ -40,41 +40,42 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
 
                 </div>
             </div>
--->
+
             <div class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarLabs" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    In-Class Resources
+                    Create Task
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/discussion">Discussion Board</a>
-                    <a class="dropdown-item" href="/dictionary/">Dictionary</a>
-                    <a class="dropdown-item" href="/quote/">Motivational Quotes</a>
+                    <a class="dropdown-item" href="/to_do">To-Do</a>
+
+
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarLabs" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    PBL
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/faqs">Faqs</a >
+                    <a class="dropdown-item" href="/discussion">discussion</a>
+                    <a class="dropdown-item" href="/calendar">calendar</a>
+                    <a class="dropdown-item" href="/to_do">To-Do</a>
                     <a class="dropdown-item" href="/library">Teacher Library</a>
-                    <a class="dropdown-item" href="/drawing/">Whiteboard</a>
-
-                </div>
-            </div>
-
-            <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarLabs" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    View Assignments
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/calendar">Calendar</a>
-                    <a class="dropdown-item" href="/to_do">To-Do List</a>
+                    <a class="dropdown-item" href="/drawing/">Drawing</a>
+                    <a class="dropdown-item" href="/dictionary/">Dictionary</a>
+                    <a class="dropdown-item" href="/quote/">quote</a>
                 </div>
 
             </div>
-
             <div class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarLabs" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Teacher Admin
+                    Crud
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href={{url_for('crud.crud')}}>View Class</a>
-                    <a class="dropdown-item" href={{url_for('crud.search')}}>Search for Class</a>
-                    <a class="dropdown-item" href={{url_for('notes.notes')}}>Teacher Notes</a>
-                    <a class="dropdown-item" href={{url_for('content.content')}}>Upload Images</a>
+                    <a class="dropdown-item" href={{url_for('crud.crud')}}>Data Base</a>
+                    <a class="dropdown-item" href={{url_for('crud.search')}}>Search </a>
+                    <a class="dropdown-item" href={{url_for('notes.notes')}}>Notes</a>
+                    <a class="dropdown-item" href={{url_for('content.content')}}>Upload</a>
                 </div>
             </div>
 
