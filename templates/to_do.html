@@ -147,6 +147,7 @@
 <script>
 
     var listContents = [];
+    var listContentsChecked = [];
 
     // Create a "close" button and append it to each list item
     var myNodelist = document.getElementsByTagName("LI");
@@ -173,19 +174,43 @@
     // Add a "checked" symbol when clicking on a list item
     var list = document.querySelector('ul');
     list.addEventListener('click', function(ev) {
-        if (ev.target.tagName === 'LI') {
+        if (ev.target.tagName === 'LI')
+        {
             ev.target.classList.toggle('checked');
+            var txt = ev.target.outerText;
+            // get rid of 'x' char from close
+            var noX = txt.substr(0, txt.length - 1);
+
+            // toggle checked from listcontents
+            for (var i = 0; i < listContents.length; i++) {
+                if (listContents[i] === noX) {
+                    if (listContentsChecked[i] == false)
+                    {
+                        listContentsChecked[i] = true;
+                    }
+                    else
+                    {
+                        listContentsChecked[i] = false;
+                    }
+
+                    break;
+                }
+            }
+            localStorage.setItem('toDoChecked', JSON.stringify(listContentsChecked));
+
         }
     }, false);
 
     function init() {
         var item = localStorage.getItem('toDo');
+        var item2 = localStorage.getItem('toDoChecked');
+
         if (item != null) {
             var listContents = JSON.parse(item);
+            var listContentsChecked = JSON.parse(item2);
 
             for (var i = 0; i < listContents.length; i++) {
-                console.debug(listContents[i]);
-                newElement(listContents[i]);
+                newElement(listContents[i], listContentsChecked[i]);
             }
         }
     }
@@ -194,13 +219,13 @@
     function newElementFromInput() {
         var inputValue = document.getElementById("myInput").value;
 
-        newElement(inputValue);
+        newElement(inputValue, false);
 
         document.getElementById("myInput").value = "";
 
     }
 
-    function newElement(inputValue) {
+    function newElement(inputValue, checked) {
         var li = document.createElement("li");
         var t = document.createTextNode(inputValue);
         if (inputValue === '') {
@@ -208,11 +233,18 @@
         } else {
             li.appendChild(t);
             document.getElementById("myUL").appendChild(li);
-            listContents.push(inputValue);
+            listContents.push(inputValue)
+            listContentsChecked.push(checked);
 
             localStorage.setItem('toDo', JSON.stringify(listContents));
+            localStorage.setItem('toDoChecked', JSON.stringify(listContentsChecked));
         }
         document.getElementById("myInput").value = "";
+
+        if(checked) {
+            // call checked for the line
+            li.click();
+        }
 
         var span = document.createElement("SPAN");
         var txt = document.createTextNode("\u00D7");
@@ -224,26 +256,22 @@
             close[i].onclick = function() {
                 console.debug("CLOSE");
                 var div = this.parentElement;
-
                 div.style.display = "none";
 
+                // get rid of 'x' char from close
                 var txt = div.outerText;
                 var noX = txt.substr(0, txt.length - 1);
 
-
+                // remove item from listcontents
                 for (var i = 0; i < listContents.length; i++) {
-                    if (listContents[i] == noX) {
-                        listContents.splice((i, 1));
+                    if (listContents[i] === noX) {
+                        var lc = listContents.splice(i, 1);
+                        var lc2 = listContentsChecked.splice(i, 1);
                         break;
                     }
                 }
-
-//                // delete item from listContents
- //               listContents.forEach(function(item) {
- //                   if (item == noX)
-
-//                })
-
+                localStorage.setItem('toDo', JSON.stringify(listContents));
+                localStorage.setItem('toDoChecked', JSON.stringify(listContentsChecked));
             }
         }
     }
