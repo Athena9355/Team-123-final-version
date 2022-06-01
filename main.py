@@ -156,6 +156,10 @@ def plots():
 def library():
     return render_template("library.html")
 
+@app.route('/quote/')
+def quote():
+    return render_template("quote.html")
+
 @app.route('/bookapi/',methods=['GET', 'POST'])
 def bookapi():
     url = "https://google-books.p.rapidapi.com/volumes"
