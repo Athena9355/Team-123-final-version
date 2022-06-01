@@ -1,6 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for
 from __init__ import app, login_manager
 from flask_login import login_required
+import requests
+import json
+
+import json
 
 from cruddy.app_crud import app_crud
 
@@ -118,6 +122,26 @@ def discussion():
 def drawing():
     return render_template("drawing.html")
 
+@app.route('/dictionary/', methods=['GET','POST'])
+def dictionary():
+    try:
+        keyword = request.form['keyword']
+    except:
+        keyword = "study"
+    url = "https://twinword-word-graph-dictionary.p.rapidapi.com/definition/"
+    querystring = {"entry":keyword}
+    headers = {
+        'x-rapidapi-host': "twinword-word-graph-dictionary.p.rapidapi.com",
+        'x-rapidapi-key': "3d43659d98msh26d5e705bc7d8b6p1d6431jsnba44357aaf20"
+    }
+    response = requests.request("GET", url, headers=headers, params=querystring)
+    if response.status_code<400:
+        results = json.loads(response.content.decode("utf-8"))
+        return render_template("dictionary.html", results=results, word=keyword)
+    else:
+        return render_template("dictionary.html", word=keyword)
+    # print(response.text)
+
 @app.route('/kamya/',methods=['GET', 'POST'])
 def kamya():
     url = "https://random-words5.p.rapidapi.com/getMultipleRandom"
@@ -154,6 +178,10 @@ def plots():
 def library():
     return render_template("library.html")
 
+@app.route('/quote/')
+def quote():
+    return render_template("quote.html")
+
 @app.route('/bookapi/',methods=['GET', 'POST'])
 def bookapi():
     url = "https://google-books.p.rapidapi.com/volumes"
@@ -168,11 +196,11 @@ def bookapi():
     return render_template("bookapi.html", book=response.json())
     print(response.text)
 
-
-
 # runs the application on the development server
 if __name__ == "__main__":
-    app.run(debug=True,port=8000) #says "run this directly" app.run will run the server
+    app.run(debug=True,port=8001)
+
+#says "run this directly" app.run will run the server
 
 #index.html is standard
 

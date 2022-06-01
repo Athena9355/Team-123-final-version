@@ -36,9 +36,9 @@ def notes():
 
 
 # Notes create/add
-@app_notes.route('/create/', methods=["POST"])
+@app_notes.route('/creates/', methods=["POST"])
 @login_required
-def create():
+def creates():
     """gets data from form and add to Notes table"""
     if request.form:
         # construct a Notes object

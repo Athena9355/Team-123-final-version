@@ -2,9 +2,6 @@
 {% block body %}
 <title>Notes</title>
 
-
-
-
 <style>
     :root{
         --white: whitesmoke;
@@ -111,7 +108,7 @@
             <h2>Notes for {{ user.name }}</h2>
             <hr>
             <!--Notes input form, textarea supports multiple lines of input  -->
-            <form method="POST" ID="create" action={{url_for('notes.create')}}>
+            <form method="POST" ID="create" action={{url_for('notes.creates')}}>
                 <table class="table">
                     <thead>
                     <tr>
