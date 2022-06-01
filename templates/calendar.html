@@ -1,10 +1,11 @@
 <!--source: https://code-boxx.com/simple-pure-javascript-calendar-events/-->
-{% include "layouts/navbar.html" %}
+{% extends "layouts/base.html" %}
+{% block body %}
 <style>
     #cal-wrap * { font-family: arial, sans-serif; }
     .ninja { display: none !important; }
 
-    #cal-wrap { max-width: 600px; }
+    #cal-wrap { max-width: 600px;}
 
     #cal-date { display: flex; }
     #cal-mth, #cal-yr {
@@ -12,17 +13,21 @@
         padding: 10px 20px;
         font-size: 1.2em;
         border: 0;
+
     }
 
     #calendar {
+
         width: 100%;
         border-collapse: collapse;
+        background: #ffffff;
+        text-align: center;
     }
     #calendar tr.head td {
         font-weight: bold;
         text-transform: uppercase;
         color: #fff;
-        background: #f37070;
+        background: cadetblue;
         padding: 15px;
         text-align: center;
     }
@@ -36,11 +41,14 @@
         background: #fff9e4;
         cursor: pointer;
     }
+    #calendar tr td.today:hover {
+        background: #f5afb3;
+    }
     #calendar tr td.blank {
         background: #f5f5f5;
     }
     #calendar tr td.today {
-        background: #ffdede;
+        background: #fdc0c3;
     }
     #calendar .dd {
         font-size: 1.2em;
@@ -51,7 +59,8 @@
         font-size: 0.8em;
         font-weight: bold;
         overflow: hidden;
-        color: #ff5d5d;
+        color: cadetblue;
+        border-radius: 12px;
     }
 
     /* allows events to be added and canceled */
@@ -65,6 +74,8 @@
         color: #333;
         padding: 0;
         margin: 0;
+        font-size: 30px;
+        text-align: center;
     }
     #evt-date {
         color: #555;
@@ -84,22 +95,25 @@
         margin: 5px;
         font-size: 1.2em;
         border: 0;
-        background: #ea4c4c;
+        background: cadetblue;
+        border-radius: 12px;
         color: #fff;
     }
 </style>
 
-<div id="cal-wrap">
+<div  style="position: relative; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -95%)" id="cal-wrap">
     <!-- table -->
     <div id="cal-date">
         <select id="cal-mth"></select>
         <select id="cal-yr"></select>
     </div>
-
+    <br>
     <div id="cal-container"></div>
-
+</div>
+    <br>
+    <div style="margin-left: 29.15%" id="cal-wrap">
     <!-- event form. text boc to add event -->
-    <form id="cal-event">
+    <form  id="cal-event">
         <h1 id="evt-head"></h1>
         <div id="evt-date"></div>
         <textarea id="evt-details" required></textarea>
@@ -107,7 +121,7 @@
         <input id="evt-del" type="button" value="Delete"/>
         <input id="evt-save" type="submit" value="Save"/>
     </form>
-</div>
+    </div>
 
 <script>
     var cal = {
@@ -266,7 +280,7 @@
 
             // (D2) UPDATE EVENT FORM
             cal.hfTxt.value = isEdit ? cal.data[cal.sDay] : "" ;
-            cal.hfHead.innerHTML = isEdit ? "EDIT EVENT" : "ADD EVENT" ;
+            cal.hfHead.innerHTML = isEdit ? "Edit Your Event" : "Add Your Event" ;
             cal.hfDate.innerHTML = `${cal.sDay} ${cal.mName[cal.sMth]} ${cal.sYear}`;
             if (isEdit) { cal.hfDel.classList.remove("ninja"); }
             else { cal.hfDel.classList.add("ninja"); }
@@ -295,3 +309,7 @@
     };
     window.addEventListener("load", cal.init);
 </script>
+
+
+{% endblock %}
+
