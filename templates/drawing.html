@@ -35,6 +35,9 @@
         w = canvas.width;
         h = canvas.height;
 
+        load();
+
+
         canvas.addEventListener("mousemove", function (e) {
             findxy('move', e)
         }, false);
@@ -104,15 +107,34 @@
         var m = confirm("Are you sure you want to clear?");
         if (m) {
             ctx.clearRect(0, 0, w, h);
-            document.getElementById("canvasimg").style.display = "none";
+        //    document.getElementById("canvasimg").style.display = "none";
         }
     }
 
     function save() {
-        document.getElementById("canvasimg").style.border = "2px solid";
+    /*    document.getElementById("canvasimg").style.border = "2px solid";
         var dataURL = canvas.toDataURL();
         document.getElementById("canvasimg").src = dataURL;
         document.getElementById("canvasimg").style.display = "inline";
+     */
+        var w = canvas.width;
+        var h = canvas.height;
+        var dataURL = canvas.toDataURL();
+        localStorage.setItem("dataURL", dataURL);
+        var img = ctx.getImageData(0, 0, w, h);
+        localStorage.setItem("img", img);
+    }
+
+    function load() {
+        var dataURL = localStorage.getItem("dataURL")
+
+        if (dataURL != null) {
+            drawing = new Image();
+            drawing.src = dataURL;
+            drawing.onload = function () {
+                ctx.drawImage(drawing,0,0);
+            };
+        }
     }
 
     function findxy(res, e) {
@@ -159,7 +181,7 @@
 
 
 <body onload="init()">
-<canvas id="can" width="800" height="400" style="position:absolute;top:10%;left:1%;border:2px solid; background-color: #ffffff"></canvas>
+<canvas id="can" width="800" height="400" style="position:absolute;top:10%;left:1%;border:2px solid; background-color: #ffffff; border-radius: 12px;"></canvas>
 <div style="background-color: white; color: #454e54; position:absolute;top:10%;left:63%; margin: 2%">Choose Color: </div>
 <div style="position:absolute;top:14%;left:63%;width:15px;height:15px;background:#d98ca3; margin: 2%; border: 1px solid; border-color: white" id="pink" onclick="color(this)"></div>
 <div style="position:absolute;top:14%;left:65%;width:15px;height:15px;background:#c55151; margin: 2%; border: 1px solid; border-color: white" id="red" onclick="color(this)"></div>
@@ -171,11 +193,10 @@
 <div style="position:absolute;top:17%;left:67%;width:15px;height:15px;background:#465eb7; margin: 2%; border: 1px solid; border-color: white" id="blue" onclick="color(this)"></div>
 <div style="position:absolute;top:17%;left:69%;width:15px;height:15px;background:#9e68bd; margin: 2%; border: 1px solid; border-color: white" id="purple" onclick="color(this)"></div>
 <div style="position:absolute;top:17%;left:71%;width:15px;height:15px;background:black; margin: 2%; border: 1px solid; border-color: white" id="black" onclick="color(this)"></div>
-<div style="background-color: rgb(255,255,255); color: #454e54; position:absolute;top:20%;left:63%; margin: 2%">Eraser: </div>
+<div style="background-color: rgb(255,255,255); color: #454e54; position:absolute;top:20%;left:63%; margin: 2%;">Eraser: </div>
 <div style="position:absolute;top:25%;left:63%;width:15px;height:15px;background:rgba(255,255,255,0);border:2px solid; margin: 2%" id="white" onclick="color(this)"></div>
-<img id="canvasimg" style="position:absolute;top:67%;left:1%; display:none; background-color: white">
-<input type="button" value="Save" id="btn" size="30" onclick="save()" style="position:absolute;top:35%;left:65%;">
-<input type="button" value="Clear" id="clr" size="23" onclick="erase()" style="position:absolute;top:35%;left:70%;">
+<input type="button" value="Save" id="btn" size="30" onclick="save()" style="position:absolute;top:35%;left:65%; border-radius: 12px;">
+<input type="button" value="Clear" id="clr" size="23" onclick="erase()" style="position:absolute;top:35%;left:70%; border-radius: 12px;">
 </body>
 </html>
 
